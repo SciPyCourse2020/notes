@@ -1,0 +1,353 @@
+mspacek@Godel:~$ cd notes
+bash: cd: notes: No such file or directory
+mspacek@Godel:~$ cd SciPyCourse2020
+mspacek@Godel:~/SciPyCourse2020$ cd notes/
+mspacek@Godel:~/SciPyCourse2020/notes$ cd 11_clustering/
+mspacek@Godel:~/SciPyCourse2020/notes/11_clustering$ ipython
+Python 3.6.9 (default, Apr 18 2020, 01:56:04)
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.10.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: %matplotlib inline
+   ...: import numpy as np
+   ...: import matplotlib.pyplot as plt
+   ...: from sklearn.decomposition import PCA
+   ...: from sklearn import cluster
+
+In [2]:
+mspacek@Godel:~/SciPyCourse2020/notes/11_clustering$ ipython
+Python 3.6.9 (default, Apr 18 2020, 01:56:04)
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.10.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]:
+   ...: import numpy as np
+   ...: import matplotlib.pyplot as plt
+   ...: from sklearn.decomposition import PCA
+   ...: from sklearn import cluster
+
+In [2]: from sklearn.datasets import make_classification, make_blobs
+   ...: np.random.seed(0)
+   ...: easy20, _ = make_blobs(n_samples=10000, n_features=20, centers=3, cluster_std=1.0,
+   ...:                        center_box=(-10.0, 10.0), shuffle=True, random_state=1)
+   ...:
+   ...: hard20, _ = make_classification(n_samples=10000, n_features=20, n_informative=2,
+   ...:                                 n_redundant=2, n_repeated=0, n_classes=1,
+   ...:                                 n_clusters_per_class=3, hypercube=True, random_state=77)
+   ...:
+   ...:
+
+In [3]: f, ax = plt.subplots(figsize=(10, 5), nrows=1, ncols=2)
+   ...: # repeating list of colors that we can index into using cluster IDs:
+   ...: colorset = np.array(['red', 'orange', 'green', 'blue', 'magenta', 'gray', 'brown', 'black']*10)
+
+In [4]: kmeans = cluster.KMeans(n_clusters=3)
+
+In [5]: kmeans
+Out[5]:
+KMeans(algorithm='auto', copy_x=True, init='k-means++', max_iter=300,
+       n_clusters=3, n_init=10, n_jobs=None, precompute_distances='auto',
+       random_state=None, tol=0.0001, verbose=0)
+
+In [6]: type(kmeans)
+Out[6]: sklearn.cluster.k_means_.KMeans
+
+In [7]: kmeans.fit(easy2)
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-7-53156dc0f904> in <module>
+----> 1 kmeans.fit(easy2)
+
+NameError: name 'easy2' is not defined
+> <ipython-input-7-53156dc0f904>(1)<module>()
+----> 1 kmeans.fit(easy2)
+
+ipdb> c
+
+In [8]: # easy data:
+   ...: pca = PCA(n_components=2) # create a PCA object, ask for only the top 2 components
+   ...: easy2 = pca.fit_transform(easy20) # calculate top 2 principal components, project d
+   ...: ata onto them
+   ...: ax[0].scatter(easy2[:, 0], easy2[:, 1], s=1) # plot x vs. y for all samples in easy
+   ...: 2
+   ...: ax[0].set_title('PCA reduced, easy data')
+   ...: ax[0].set_xlabel('PC1')
+   ...: ax[0].set_ylabel('PC2')
+   ...:
+   ...: # hard data:
+   ...: pca = PCA(n_components=2) # create a PCA object, ask for only the top 2 components
+   ...: hard2 = pca.fit_transform(hard20) # calculate top 2 principal components, project d
+   ...: ata onto them
+   ...: ax[1].scatter(hard2[:, 0], hard2[:, 1], s=1) # plot x vs. y for all samples in easy
+   ...: 2
+   ...: ax[1].set_title('PCA reduced, hard data')
+   ...: ax[1].set_xlabel('PC1')
+   ...: ax[1].set_ylabel('PC2')
+Out[8]: Text(504.19444444444446, 0.5, 'PC2')
+
+In [9]: plt.close('all')
+
+In [10]: f, ax = plt.subplots(figsize=(10, 5), nrows=1, ncols=2)
+
+In [11]: kmeans.fit(easy2)
+Out[11]:
+KMeans(algorithm='auto', copy_x=True, init='k-means++', max_iter=300,
+       n_clusters=3, n_init=10, n_jobs=None, precompute_distances='auto',
+       random_state=None, tol=0.0001, verbose=0)
+
+In [12]: kmeans.labels_
+Out[12]: array([1, 0, 2, ..., 2, 0, 1], dtype=int32)
+
+In [13]: kmeans.labels_.shape
+Out[13]: (10000,)
+
+In [14]: easy2.shape
+Out[14]: (10000, 2)
+
+In [15]: colors
+UsageError: %colors: you must specify a color scheme. See '%colors?'
+
+In [16]: colorset
+Out[16]:
+array(['red', 'orange', 'green', 'blue', 'magenta', 'gray', 'brown',
+       'black', 'red', 'orange', 'green', 'blue', 'magenta', 'gray',
+       'brown', 'black', 'red', 'orange', 'green', 'blue', 'magenta',
+       'gray', 'brown', 'black', 'red', 'orange', 'green', 'blue',
+       'magenta', 'gray', 'brown', 'black', 'red', 'orange', 'green',
+       'blue', 'magenta', 'gray', 'brown', 'black', 'red', 'orange',
+       'green', 'blue', 'magenta', 'gray', 'brown', 'black', 'red',
+       'orange', 'green', 'blue', 'magenta', 'gray', 'brown', 'black',
+       'red', 'orange', 'green', 'blue', 'magenta', 'gray', 'brown',
+       'black', 'red', 'orange', 'green', 'blue', 'magenta', 'gray',
+       'brown', 'black', 'red', 'orange', 'green', 'blue', 'magenta',
+       'gray', 'brown', 'black'], dtype='<U7')
+
+In [17]: cids = kmeans.labels_
+
+In [18]: cids
+Out[18]: array([1, 0, 2, ..., 2, 0, 1], dtype=int32)
+
+In [19]: colors = colorset[cids]
+
+In [20]: colors
+Out[20]:
+array(['orange', 'red', 'green', ..., 'green', 'red', 'orange'],
+      dtype='<U7')
+
+In [21]: ax[0].scatter(easy2[:, 0], easy2[:, 1], s=1, color=colors)
+Out[21]: <matplotlib.collections.PathCollection at 0x7f923fac76a0>
+
+In [22]: ax[0].set_title('KMeans, PCA reduced, easy data')
+    ...: ax[0].set_xlabel('PC1')
+    ...: ax[0].set_ylabel('PC2')
+Out[22]: Text(13.944444444444445, 0.5, 'PC2')
+
+In [23]: kmeans = cluster.KMeans(n_clusters=3) # create a KMeans object, tell it n_clusters
+    ...:  you want
+    ...: kmeans.fit(hard2) # apply KMeans to the hard dimension-reduced data
+    ...: cids = kmeans.labels_ # get resulting cluster IDs from the kmeans object, one for
+    ...: each sample
+    ...: colors = colorset[cids] # convert cluster IDs to colors
+    ...: ax[1].scatter(hard2[:, 0], hard2[:, 1], s=1, color=colors) # plot x vs. y for all
+    ...: samples
+    ...: ax[1].set_title('KMeans, PCA reduced, hard data')
+    ...: ax[1].set_xlabel('PC1')
+    ...: ax[1].set_ylabel('PC2')
+Out[23]: Text(512.7534722222223, 0.5, 'PC2')
+
+In [24]:
+
+In [24]: f, ax = plt.subplots(figsize=(10, 5), nrows=1, ncols=2)
+    ...: # repeating list of colors that we can index into using cluster IDs:
+    ...: colorset = np.array(['red', 'orange', 'green', 'blue', 'magenta', 'gray', 'brown',
+    ...:  'black']*10)
+    ...:
+    ...: ## easy data:
+    ...: dbscan = cluster.DBSCAN(eps=2, min_samples=80) # create a DBSCAN object, set its t
+    ...: wo parameters
+    ...: dbscan.fit(easy2) # apply DBSCAN to the easy dimension-reduced data
+    ...: cids = dbscan.labels_ # get resulting cluster IDs from the kmeans object, one for
+    ...: each sample
+    ...: colors = colorset[cids] # convert cluster IDs to colors
+    ...: ax[0].scatter(easy2[:, 0], easy2[:, 1], s=1, color=colors) # plot x vs. y for all
+    ...: samples
+    ...: ax[0].set_title('DBSCAN, PCA reduced, easy data')
+    ...: ax[0].set_xlabel('PC1')
+    ...: ax[0].set_ylabel('PC2')
+    ...:
+    ...: ## hard data:
+    ...: dbscan = cluster.DBSCAN(eps=0.2075, min_samples=80) # create a DBSCAN object, set
+    ...: its two parameters
+    ...: dbscan.fit(hard2) # apply DBSCAN to the hard dimension-reduced data
+    ...: cids = dbscan.labels_ # get resulting cluster IDs from the kmeans object, one for
+    ...: each sample
+    ...: colors = colorset[cids] # convert cluster IDs to colors
+    ...: ax[1].scatter(hard2[:, 0], hard2[:, 1], s=1, color=colors) # plot x vs. y for all
+    ...: samples
+    ...: ax[1].set_title('DBSCAN, PCA reduced, hard data')
+    ...: ax[1].set_xlabel('PC1')
+    ...: ax[1].set_ylabel('PC2')
+Out[24]: Text(0, 0.5, 'PC2')
+
+In [25]: f, ax = plt.subplots(figsize=(10, 5), nrows=1, ncols=2)
+    ...: # repeating list of colors that we can index into using cluster IDs:
+    ...: colorset = np.array(['red', 'orange', 'green', 'blue', 'magenta', 'gray', 'brown',
+    ...:  'black']*10)
+    ...:
+    ...: ## easy data:
+    ...: dbscan = cluster.DBSCAN(eps=2, min_samples=80) # create a DBSCAN object, set its t
+    ...: wo parameters
+    ...: dbscan.fit(easy2) # apply DBSCAN to the easy dimension-reduced data
+    ...: cids = dbscan.labels_ # get resulting cluster IDs from the kmeans object, one for
+    ...: each sample
+    ...: colors = colorset[cids] # convert cluster IDs to colors
+    ...: ax[0].scatter(easy2[:, 0], easy2[:, 1], s=1, color=colors) # plot x vs. y for all
+    ...: samples
+    ...: ax[0].set_title('DBSCAN, PCA reduced, easy data')
+    ...: ax[0].set_xlabel('PC1')
+    ...: ax[0].set_ylabel('PC2')
+    ...:
+    ...: ## hard data:
+    ...: dbscan = cluster.DBSCAN(eps=0.2075, min_samples=80) # create a DBSCAN object, set
+    ...: its two parameters
+    ...: dbscan.fit(hard2) # apply DBSCAN to the hard dimension-reduced data
+    ...: cids = dbscan.labels_ # get resulting cluster IDs from the kmeans object, one for
+    ...: each sample
+    ...: colors = colorset[cids] # convert cluster IDs to colors
+    ...: ax[1].scatter(hard2[:, 0], hard2[:, 1], s=1, color=colors) # plot x vs. y for all
+    ...: samples
+    ...: ax[1].set_title('DBSCAN, PCA reduced, hard data')
+    ...: ax[1].set_xlabel('PC1')
+    ...: ax[1].set_ylabel('PC2')
+Out[25]: Text(0, 0.5, 'PC2')
+
+In [26]:
+mspacek@Godel:~/SciPyCourse2020/notes/11_clustering$
+mspacek@Godel:~/SciPyCourse2020/notes/11_clustering$
+mspacek@Godel:~/SciPyCourse2020/notes/11_clustering$
+mspacek@Godel:~/SciPyCourse2020/notes/11_clustering$ ipython
+Python 3.6.9 (default, Apr 18 2020, 01:56:04)
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.10.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: import pandas as pd
+
+In [2]: data = pd.read_excel('measurements.xlsx)
+  File "<ipython-input-2-46cb35095886>", line 1
+    data = pd.read_excel('measurements.xlsx)
+                                            ^
+SyntaxError: EOL while scanning string literal
+
+
+In [3]: data = pd.read_excel('measurements.xlsx')
+
+In [4]: data
+Out[4]:
+             0         1         2         3         4         5         6
+0    -0.981154 -2.528742 -0.248891  0.195579  1.142154  1.085348  0.180768
+1    -0.736366 -1.897231 -0.666810  0.531328  1.550128  1.443983  0.058933
+2     1.291544  1.551358  1.371443 -1.580453 -1.162967 -0.954218 -0.634125
+3    -0.252193 -0.792980 -0.269614 -1.040343 -1.046027 -0.899913  1.248024
+4    -0.562443 -0.128654  0.640542 -0.935357  0.646274  0.728409 -1.240694
+...        ...       ...       ...       ...       ...       ...       ...
+9995 -0.263691  0.114853  0.298469  2.317880  1.919156  1.606380  0.262037
+9996  0.182818 -0.260589  0.908907 -0.757806  0.405162  0.475381 -0.382755
+9997  1.222563  0.828395  0.501491 -0.404852 -0.874514 -0.803149 -0.074484
+9998 -0.919295  0.126887  1.335809 -1.958596  2.074536  2.224144  0.685785
+9999 -1.510404 -0.823130  0.484970 -0.813755  0.916300  0.976772  0.605644
+
+[10000 rows x 7 columns]
+
+In [5]: type(data)
+Out[5]: pandas.core.frame.DataFrame
+
+In [6]: data = data.values
+
+In [7]: type(data)
+Out[7]: numpy.ndarray
+
+In [8]: data.shape
+Out[8]: (10000, 7)
+
+In [9]: data
+Out[9]:
+array([[-0.98115357, -2.52874201, -0.24889083, ...,  1.14215356,
+         1.08534795,  0.18076836],
+       [-0.73636644, -1.89723139, -0.66680988, ...,  1.55012759,
+         1.44398277,  0.0589334 ],
+       [ 1.29154378,  1.55135802,  1.37144327, ..., -1.16296715,
+        -0.95421825, -0.6341255 ],
+       ...,
+       [ 1.22256265,  0.82839459,  0.50149114, ..., -0.87451365,
+        -0.80314924, -0.07448424],
+       [-0.91929493,  0.12688712,  1.33580862, ...,  2.07453609,
+         2.22414431,  0.68578472],
+       [-1.51040377, -0.82312972,  0.48496981, ...,  0.9163005 ,
+         0.97677243,  0.60564422]])
+
+In [10]: f, ax = plt.subplots(nrows=1, ncols=3, figsize=(15, 5))
+
+In [11]: ax[0].set_xlabel('Dimension 0')
+    ...: ax[0].set_ylabel('Dimension 1')
+Out[11]: Text(13.944444444444452, 0.5, 'Dimension 1')
+
+In [12]: ax[0].scatter(data[:, 0], data[:, 1])
+Out[12]: <matplotlib.collections.PathCollection at 0x7f638c4a0b70>
+
+In [13]: f, ax = plt.subplots(nrows=1, ncols=3, figsize=(15, 5))
+
+In [14]: ax[0].set_xlabel('Dimension 0')
+    ...: ax[0].set_ylabel('Dimension 1')
+Out[14]: Text(13.944444444444452, 0.5, 'Dimension 1')
+
+In [15]: ax[0].scatter(data[:, 0], data[:, 1], s=1)
+Out[15]: <matplotlib.collections.PathCollection at 0x7f63863064e0>
+
+In [16]: ax[1].set_xlabel('Dimension 2')
+    ...: ax[1].set_ylabel('Dimension 3')
+Out[16]: Text(520.3981481481483, 0.5, 'Dimension 3')
+
+In [17]: ax[1].scatter(data[:, 2], data[:, 3], s=1)
+Out[17]: <matplotlib.collections.PathCollection at 0x7f6386260550>
+
+In [18]: ax[2].set_xlabel('Dimension 4')
+    ...: ax[2].set_ylabel('Dimension 5')
+Out[18]: Text(1015.1956809531456, 0.5, 'Dimension 5')
+
+In [19]: ax[2].scatter(data[:, 4], data[:, 5], s=1)
+Out[19]: <matplotlib.collections.PathCollection at 0x7f6386275f60>
+
+In [20]: from sklearn.decomposition import PCA
+
+In [21]: pca = PCA(n_components=2)
+
+In [22]: pca.fit_transform?
+Signature: pca.fit_transform(X, y=None)
+Docstring:
+Fit the model with X and apply the dimensionality reduction on X.
+
+Parameters
+----------
+X : array-like, shape (n_samples, n_features)
+    Training data, where n_samples is the number of samples
+    and n_features is the number of features.
+
+y : Ignored
+
+Returns
+-------
+X_new : array-like, shape (n_samples, n_components)
+File:      /usr/local/lib/python3.6/dist-packages/sklearn/decomposition/pca.py
+Type:      method
+
+In [23]: data2 = pca.fit_transform(data)
+
+In [24]: data2.shape
+Out[24]: (10000, 2)
+
+In [25]: f, ax = plt.subplots(figsize=(5, 5))
+
+In [26]: ax.scatter(data2[:, 0], data2[:, 1], s=1)
+Out[26]: <matplotlib.collections.PathCollection at 0x7f632f0f29b0>
+
+In [27]:
