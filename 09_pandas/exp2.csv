@@ -1,0 +1,12 @@
+subject,start_time,end_time,stimulus,outcome
+A02,2.7,5.6,L,pass
+A02,1.2,4.3,L,pass
+A02,4.0,10.4,R,fail
+A02,2.3,5.6,R,pass
+A02,4.1,10.0,R,fail
+A02,3.9,12.1,R,fail
+A02,2.8,4.5,L,pass
+A02,1.3,3.1,R,pass
+A02,0.8,4.1,L,pass
+A02,3.6,12.4,R,fail
+A02,5.5,13.3,R,fail

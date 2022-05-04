@@ -1,0 +1,1367 @@
+
+mspacek@Godel:~/SciPyCourse2020/notes/02_Python_basics_2$ ls
+02_Python_basics_2.md  02_Python_basics_2.pdf  example_functions.py  hellos.py  more_basics.py
+mspacek@Godel:~/SciPyCourse2020/notes/02_Python_basics_2$ python3 more_basics.py
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+mspacek@Godel:~/SciPyCourse2020/notes/02_Python_basics_2$ python3
+Python 3.6.9 (default, Apr 18 2020, 01:56:04)
+[GCC 8.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 5/2
+2.5
+>>> 5 % 2
+1
+>>> 4 % 2
+0
+>>>
+mspacek@Godel:~/SciPyCourse2020/notes/02_Python_basics_2$ python3 more_basics.py
+0
+is even
+1
+is odd
+2
+is even
+3
+is odd
+4
+is even
+5
+is odd
+6
+is even
+7
+is odd
+8
+is even
+9
+is odd
+mspacek@Godel:~/SciPyCourse2020/notes/02_Python_basics_2$ python3 more_basics.py
+0
+is even
+1
+is odd
+2
+is even
+3
+is odd
+4
+is even
+5
+is odd
+6
+is even
+7
+8
+is even
+9
+is odd
+mspacek@Godel:~/SciPyCourse2020/notes/02_Python_basics_2$ python3 more_basics.py
+0
+is even
+1
+is odd
+2
+is even
+3
+is odd
+4
+is even
+5
+is odd
+6
+is even
+8
+is even
+9
+is odd
+mspacek@Godel:~/SciPyCourse2020/notes/02_Python_basics_2$ python3 more_basics.py
+0
+is even
+1
+is odd
+2
+is even
+3
+is odd
+4
+is even
+5
+is odd
+6
+is even
+8
+is even
+9
+is odd
+mspacek@Godel:~/SciPyCourse2020/notes/02_Python_basics_2$ python3
+Python 3.6.9 (default, Apr 18 2020, 01:56:04)
+[GCC 8.4.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+mspacek@Godel:~/SciPyCourse2020/notes/02_Python_basics_2$ ipython
+Python 3.6.9 (default, Apr 18 2020, 01:56:04)
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.10.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: a = 1
+
+In [2]: 2*2
+Out[2]: 4
+
+In [3]: _2
+Out[3]: 4
+
+In [4]: 23423*2342309
+Out[4]: 54863903707
+
+In [5]: _4
+Out[5]: 54863903707
+
+In [6]: range?
+Init signature: range(self, /, *args, **kwargs)
+Docstring:
+range(stop) -> range object
+range(start, stop[, step]) -> range object
+
+Return an object that produces a sequence of integers from start (inclusive)
+to stop (exclusive) by step.  range(i, j) produces i, i+1, i+2, ..., j-1.
+start defaults to 0, and stop is omitted!  range(4) produces 0, 1, 2, 3.
+These are exactly the valid indices for a list of 4 elements.
+When step is given, it specifies the increment (or decrement).
+Type:           type
+Subclasses:
+
+In [7]: help(range)
+
+
+In [8]: range?
+Init signature: range(self, /, *args, **kwargs)
+Docstring:
+range(stop) -> range object
+range(start, stop[, step]) -> range object
+
+Return an object that produces a sequence of integers from start (inclusive)
+to stop (exclusive) by step.  range(i, j) produces i, i+1, i+2, ..., j-1.
+start defaults to 0, and stop is omitted!  range(4) produces 0, 1, 2, 3.
+These are exactly the valid indices for a list of 4 elements.
+When step is given, it specifies the increment (or decrement).
+Type:           type
+Subclasses:
+
+In [9]: something = 1
+
+In [10]: something
+Out[10]: 1
+
+In [11]: really_long_name = 123
+
+In [12]: 2 * really_long_name
+Out[12]: 246
+
+In [13]: s = 'hello'
+
+In [14]: s.upper?
+Docstring:
+S.upper() -> str
+
+Return a copy of S converted to uppercase.
+Type:      builtin_function_or_method
+
+In [15]: s.upper()
+Out[15]: 'HELLO'
+
+In [16]: whos
+Variable           Type      Data/Info
+--------------------------------------
+a                  int       1
+np                 module    <module 'numpy' from '/us<...>kages/numpy/__init__.py'>
+plt                module    <module 'matplotlib.pyplo<...>es/matplotlib/pyplot.py'>
+really_long_name   int       123
+s                  str       hello
+something          int       1
+
+In [17]: whos
+Variable           Type      Data/Info
+--------------------------------------
+a                  int       1
+np                 module    <module 'numpy' from '/us<...>kages/numpy/__init__.py'>
+plt                module    <module 'matplotlib.pyplo<...>es/matplotlib/pyplot.py'>
+really_long_name   int       123
+s                  str       hello
+something          int       1
+
+In [18]: s
+Out[18]: 'hello'
+
+In [19]: del s
+
+In [20]: whos
+Variable           Type      Data/Info
+--------------------------------------
+a                  int       1
+np                 module    <module 'numpy' from '/us<...>kages/numpy/__init__.py'>
+plt                module    <module 'matplotlib.pyplo<...>es/matplotlib/pyplot.py'>
+really_long_name   int       123
+something          int       1
+
+In [21]: s
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-21-ded5ba42480f> in <module>
+----> 1 s
+
+NameError: name 's' is not defined
+> <ipython-input-21-ded5ba42480f>(1)<module>()
+----> 1 s
+
+ipdb> c
+
+In [22]: reset
+Once deleted, variables cannot be recovered. Proceed (y/[n])? y
+
+In [23]: whos
+Interactive namespace is empty.
+
+In [24]: a = 1
+
+In [25]: a
+Out[25]: 1
+
+In [26]: whos
+Variable   Type    Data/Info
+----------------------------
+a          int     1
+
+In [27]: for i in range(10):
+    ...:     if i == 7:
+    ...:         continue
+    ...:     print(i)
+    ...:     if i % 2 == 0:
+    ...:         print('is even')
+    ...:     else:
+    ...:         print('is odd')
+    ...:
+0
+is even
+1
+is odd
+2
+is even
+3
+is odd
+4
+is even
+5
+is odd
+6
+is even
+8
+is even
+9
+is odd
+
+In [28]: for i in range(10):
+    ...:     if i == 7:
+    ...:         continue
+    ...:     print(i)
+    ...:     if i % 2 == 0:
+    ...:         print('is even')
+    ...:     else:
+    ...:         print('is odd')
+    ...:
+0
+is even
+1
+is odd
+2
+is even
+3
+is odd
+4
+is even
+5
+is odd
+6
+is even
+8
+is even
+9
+is odd
+
+In [29]: run more_basics.py
+0
+is even
+1
+is odd
+2
+is even
+3
+is odd
+4
+is even
+5
+is odd
+6
+is even
+8
+is even
+9
+is odd
+
+In [30]: run more_basics.py
+0
+is even
+1
+is odd
+2
+is even
+3
+is odd
+4
+is even
+5
+is odd
+6
+is even
+8
+is even
+9
+is odd
+
+In [31]: whos
+Variable   Type    Data/Info
+----------------------------
+a          int     1
+b          int     123
+i          int     9
+
+In [32]: c = 456
+
+In [33]: run more_basics.py
+0
+is even
+1
+is odd
+2
+is even
+3
+is odd
+4
+is even
+5
+is odd
+6
+is even
+8
+is even
+9
+is odd
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+~/SciPyCourse2020/notes/02_Python_basics_2/more_basics.py in <module>
+      7     else:
+      8         print('is odd')
+----> 9 print(c)
+
+NameError: name 'c' is not defined
+> /home/mspacek/SciPyCourse2020/notes/02_Python_basics_2/more_basics.py(9)<module>()
+      5     if i % 2 == 0:
+      6         print('is even')
+      7     else:
+      8         print('is odd')
+----> 9 print(c)
+
+ipdb> c
+
+In [34]: run -i more_basics.py
+0
+is even
+1
+is odd
+2
+is even
+3
+is odd
+4
+is even
+5
+is odd
+6
+is even
+8
+is even
+9
+is odd
+456
+
+In [35]: for i in range(10):
+    ...:     if i == 7:
+    ...:         continue
+    ...:     print(i)
+    ...:     if i % 2 == 0:
+    ...:         print('is even')
+    ...:     else:
+    ...:         print('is odd')
+    ...: print(c)
+0
+is even
+1
+is odd
+2
+is even
+3
+is odd
+4
+is even
+5
+is odd
+6
+is even
+8
+is even
+9
+is odd
+456
+
+In [36]: ls
+02_Python_basics_2.md  02_Python_basics_2.pdf  example_functions.py  hellos.py  more_basics.py
+
+In [37]: ls -al
+total 164
+drwxrwxr-x  2 mspacek mspacek   4096 Apr 28 13:27 ./
+drwxrwxr-x 21 mspacek mspacek   4096 Feb  4 15:28 ../
+-rw-rw-r--  1 mspacek mspacek  10462 Apr 28 10:02 02_Python_basics_2.md
+-rw-------  1 mspacek mspacek 132821 Apr 28 10:04 02_Python_basics_2.pdf
+-rw-rw-r--  1 mspacek mspacek    420 May  6  2019 example_functions.py
+-rw-rw-r--  1 mspacek mspacek     50 Apr 28 09:54 hellos.py
+-rw-rw-r--  1 mspacek mspacek    152 Apr 28 13:27 more_basics.py
+
+In [38]: pwd
+Out[38]: '/home/mspacek/SciPyCourse2020/notes/02_Python_basics_2'
+
+In [39]: cd ..
+/home/mspacek/SciPyCourse2020/notes
+
+In [40]: ls -al
+total 92
+drwxrwxr-x 21 mspacek mspacek 4096 Feb  4 15:28 ./
+drwxrwxr-x  9 mspacek mspacek 4096 Apr 28 12:58 ../
+drwxrwxr-x  2 mspacek mspacek 4096 Apr 21 03:49 00_intro/
+drwxrwxr-x  2 mspacek mspacek 4096 Apr 28 12:48 01_Python_basics/
+drwxrwxr-x  2 mspacek mspacek 4096 Apr 28 13:27 02_Python_basics_2/
+drwxrwxr-x  2 mspacek mspacek 4096 Feb  3 16:57 03_collections/
+drwxrwxr-x  2 mspacek mspacek 4096 Feb  3 16:57 04_numpy/
+drwxrwxr-x  2 mspacek mspacek 4096 Feb  3 16:57 05_numpy_dtype/
+drwxrwxr-x  2 mspacek mspacek 4096 Feb  3 16:57 06_fileio_mpl/
+drwxrwxr-x  2 mspacek mspacek 4096 Feb  3 16:57 07_mpl_matrices/
+drwxrwxr-x  2 mspacek mspacek 4096 Feb  3 16:57 08_images/
+drwxrwxr-x  2 mspacek mspacek 4096 Feb  3 16:57 09_pandas/
+drwxrwxr-x  2 mspacek mspacek 4096 Feb  3 16:57 10_stats/
+drwxrwxr-x  2 mspacek mspacek 4096 Feb 12 15:23 11_organizing/
+drwxrwxr-x  2 mspacek mspacek 4096 Feb  4 15:25 12_clustering/
+drwxrwxr-x  8 mspacek mspacek 4096 Apr 28 12:48 .git/
+-rw-rw-r--  1 mspacek mspacek   52 Feb  4 15:27 .gitignore
+drwxrwxr-x  3 mspacek mspacek 4096 Apr 28 10:05 homework1/
+drwxrwxr-x  3 mspacek mspacek 4096 Feb  3 16:57 homework2/
+drwxrwxr-x  3 mspacek mspacek 4096 Feb  3 16:57 homework3/
+drwxrwxr-x  4 mspacek mspacek 4096 Feb  3 16:57 homework4/
+drwxrwxr-x  4 mspacek mspacek 4096 Feb  3 16:57 old_notes/
+-rw-rw-r--  1 mspacek mspacek   20 Mar 28  2017 README.md
+
+In [41]: cd -
+/home/mspacek/SciPyCourse2020/notes/02_Python_basics_2
+
+In [42]: ls -al
+total 164
+drwxrwxr-x  2 mspacek mspacek   4096 Apr 28 13:27 ./
+drwxrwxr-x 21 mspacek mspacek   4096 Feb  4 15:28 ../
+-rw-rw-r--  1 mspacek mspacek  10462 Apr 28 10:02 02_Python_basics_2.md
+-rw-------  1 mspacek mspacek 132821 Apr 28 10:04 02_Python_basics_2.pdf
+-rw-rw-r--  1 mspacek mspacek    420 May  6  2019 example_functions.py
+-rw-rw-r--  1 mspacek mspacek     50 Apr 28 09:54 hellos.py
+-rw-rw-r--  1 mspacek mspacek    152 Apr 28 13:27 more_basics.py
+
+In [43]: s = 'hello'
+
+In [44]: s
+Out[44]: 'hello'
+
+In [45]: s = ''
+
+In [46]: s
+Out[46]: ''
+
+In [47]: s = 'Hello' + ' ' + 'world'
+
+In [48]: s
+Out[48]: 'Hello world'
+
+In [49]: s = 'Hello world'
+
+In [50]: s
+Out[50]: 'Hello world'
+
+In [51]: a = 1
+
+In [52]: a += 1
+
+In [53]: a
+Out[53]: 2
+
+In [54]: a += 1
+
+In [55]: a
+Out[55]: 3
+
+In [56]: s += '!'
+
+In [57]: s
+Out[57]: 'Hello world!'
+
+In [58]: s
+Out[58]: 'Hello world!'
+
+In [59]: s * 2
+Out[59]: 'Hello world!Hello world!'
+
+In [60]: s * 3
+Out[60]: 'Hello world!Hello world!Hello world!'
+
+In [61]: s
+Out[61]: 'Hello world!'
+
+In [62]: w = '\n'
+
+In [63]: w
+Out[63]: '\n'
+
+In [64]: print(w)
+
+
+
+In [65]: t = '\t'
+
+In [66]: print(t)
+
+
+In [67]: print('hi\tthere')
+hi  there
+
+In [68]: 5 % 2
+Out[68]: 1
+
+In [69]: value = 'world'
+
+In [70]: 'Hello %s' % value
+Out[70]: 'Hello world'
+
+In [71]: 'Hello %s how are you?' % value
+Out[71]: 'Hello world how are you?'
+
+In [72]: value = 'Joe'
+
+In [73]: 'Hello %s how are you?' % value
+Out[73]: 'Hello Joe how are you?'
+
+In [74]: 'The year %d is here' % 2020
+Out[74]: 'The year 2020 is here'
+
+In [75]: 'The year %d is here' % 2020.0
+Out[75]: 'The year 2020 is here'
+
+In [76]: 'The year %i is here' % 2020
+Out[76]: 'The year 2020 is here'
+
+In [77]: 'pi is %f' % 3.14159
+Out[77]: 'pi is 3.141590'
+
+In [78]: 'pi is %.3f' % 3.14159
+Out[78]: 'pi is 3.142'
+
+In [79]: 'The date is %s %d, %d' % ('April', 28, 2020)
+Out[79]: 'The date is April 28, 2020'
+
+In [80]: s
+Out[80]: 'Hello world!'
+
+In [81]: s == 'goodbye'
+Out[81]: False
+
+In [82]: s != 'goodbye'
+Out[82]: True
+
+In [83]: s > 'goodbye'
+Out[83]: False
+
+In [84]: s < 'goodbye'
+Out[84]: True
+
+In [85]: len?
+Signature: len(obj, /)
+Docstring: Return the number of items in a container.
+Type:      builtin_function_or_method
+
+In [86]: s
+Out[86]: 'Hello world!'
+
+In [87]: len(s)
+Out[87]: 12
+
+In [88]: s = 'abcdefg'
+
+In [89]: len(s)
+Out[89]: 7
+
+In [90]: 'h' in s
+Out[90]: False
+
+In [91]: 'a' in s
+Out[91]: True
+
+In [92]: for i in range(5):
+    ...:     print(i)
+    ...:
+0
+1
+2
+3
+4
+
+In [93]: for c in s:
+    ...:     print(c)
+    ...:
+a
+b
+c
+d
+e
+f
+g
+
+In [94]: s
+Out[94]: 'abcdefg'
+
+In [95]: s[0]
+Out[95]: 'a'
+
+In [96]: s[1]
+Out[96]: 'b'
+
+In [97]: s[2]
+Out[97]: 'c'
+
+In [98]: s[6]
+Out[98]: 'g'
+
+In [99]: s[7]
+---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+~/SciPyCourse2020/notes/02_Python_basics_2/more_basics.py in <module>
+----> 1 s[7]
+
+IndexError: string index out of range
+> <ipython-input-99-b035325af127>(1)<module>()
+----> 1 s[7]
+
+ipdb> c
+
+In [100]: s[0]
+Out[100]: 'a'
+
+In [101]: s[-1]
+Out[101]: 'g'
+
+In [102]: s
+Out[102]: 'abcdefg'
+
+In [103]: s[-1]
+Out[103]: 'g'
+
+In [104]: s[-2]
+Out[104]: 'f'
+
+In [105]: s[-3]
+Out[105]: 'e'
+
+In [106]: s = 'abcd'
+
+In [107]: s[2]
+Out[107]: 'c'
+
+In [108]: s[0:2]
+Out[108]: 'ab'
+
+In [109]: s[1:3]
+Out[109]: 'bc'
+
+In [110]: s[0:3]
+Out[110]: 'abc'
+
+In [111]: s[2]
+Out[111]: 'c'
+
+In [112]: s[[0, 3]]
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+~/SciPyCourse2020/notes/02_Python_basics_2/more_basics.py in <module>
+----> 1 s[[0, 3]]
+
+TypeError: string indices must be integers
+> <ipython-input-112-5a31c26b5f5a>(1)<module>()
+----> 1 s[[0, 3]]
+
+ipdb> c
+
+In [113]: s[(0, 3)]
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+~/SciPyCourse2020/notes/02_Python_basics_2/more_basics.py in <module>
+----> 1 s[(0, 3)]
+
+TypeError: string indices must be integers
+> <ipython-input-113-d8832133f850>(1)<module>()
+----> 1 s[(0, 3)]
+
+ipdb> c
+
+In [114]: s[0]
+Out[114]: 'a'
+
+In [115]: s[3]
+Out[115]: 'd'
+
+In [116]: s[0] + s[3]
+Out[116]: 'ad'
+
+In [117]: s[0:2]
+Out[117]: 'ab'
+
+In [118]: s = 'abcdefg'
+
+In [119]: s[0:7:2]
+Out[119]: 'aceg'
+
+In [120]: s[0:7:3]
+Out[120]: 'adg'
+
+In [121]: s[0:7:1]
+Out[121]: 'abcdefg'
+
+In [122]: s[0:7]
+Out[122]: 'abcdefg'
+
+In [123]: s[0:7]
+Out[123]: 'abcdefg'
+
+In [124]: s[:7]
+Out[124]: 'abcdefg'
+
+In [125]: s[:5]
+Out[125]: 'abcde'
+
+In [126]: s[1:7]
+Out[126]: 'bcdefg'
+
+In [127]: s[1:]
+Out[127]: 'bcdefg'
+
+In [128]: s[1:]
+Out[128]: 'bcdefg'
+
+In [129]: s[:]
+Out[129]: 'abcdefg'
+
+In [130]: s
+Out[130]: 'abcdefg'
+
+In [131]: s[::2]
+Out[131]: 'aceg'
+
+In [132]: s[0:7:2]
+Out[132]: 'aceg'
+
+In [133]: s[::2]
+Out[133]: 'aceg'
+
+In [134]: len(7)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+~/SciPyCourse2020/notes/02_Python_basics_2/more_basics.py in <module>
+----> 1 len(7)
+
+TypeError: object of type 'int' has no len()
+> <ipython-input-134-302f763c4edb>(1)<module>()
+----> 1 len(7)
+
+ipdb> c
+
+In [135]: len(s)
+Out[135]: 7
+
+In [136]: s[0:7:2]
+Out[136]: 'aceg'
+
+In [137]: s[::2]
+Out[137]: 'aceg'
+
+In [138]: s[2:0:-1]
+Out[138]: 'cb'
+
+In [139]: s
+Out[139]: 'abcdefg'
+
+In [140]: s[::-1]
+Out[140]: 'gfedcba'
+
+In [141]: n = 1.0
+
+In [142]: n
+Out[142]: 1.0
+
+In [143]: type(n)
+Out[143]: float
+
+In [144]: n.real
+Out[144]: 1.0
+
+In [145]: n.imag
+Out[145]: 0.0
+
+In [146]: n = 1+2j
+
+In [147]: n.imag
+Out[147]: 2.0
+
+In [148]: s = 'hello world'
+
+In [149]: a = 'o'
+
+In [150]: s.count?
+Docstring:
+S.count(sub[, start[, end]]) -> int
+
+Return the number of non-overlapping occurrences of substring sub in
+string S[start:end].  Optional arguments start and end are
+interpreted as in slice notation.
+Type:      builtin_function_or_method
+
+In [151]: s.count(a)
+Out[151]: 2
+
+In [152]: s.count('l')
+Out[152]: 3
+
+In [153]: s.index('o')
+Out[153]: 4
+
+In [154]: s[4]
+Out[154]: 'o'
+
+In [155]: s.split?
+Docstring:
+S.split(sep=None, maxsplit=-1) -> list of strings
+
+Return a list of the words in S, using sep as the
+delimiter string.  If maxsplit is given, at most maxsplit
+splits are done. If sep is not specified or is None, any
+whitespace string is a separator and empty strings are
+removed from the result.
+Type:      builtin_function_or_method
+
+In [156]: s
+Out[156]: 'hello world'
+
+In [157]: s.split('o')
+Out[157]: ['hell', ' w', 'rld']
+
+In [158]: s
+Out[158]: 'hello world'
+
+In [159]: s = ','
+
+In [160]: s.join('dog', 'cat', 'fish')
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+~/SciPyCourse2020/notes/02_Python_basics_2/more_basics.py in <module>
+----> 1 s.join('dog', 'cat', 'fish')
+
+TypeError: join() takes exactly one argument (3 given)
+> <ipython-input-160-699df5bd5e62>(1)<module>()
+----> 1 s.join('dog', 'cat', 'fish')
+
+ipdb> c
+
+In [161]: s
+Out[161]: ','
+
+In [162]: s.join(('dog', 'cat', 'fish'))
+Out[162]: 'dog,cat,fish'
+
+In [163]: s = 'hello world'
+
+In [164]: s.replace('e', '3')
+Out[164]: 'h3llo world'
+
+In [165]: s.upper()
+Out[165]: 'HELLO WORLD'
+
+In [166]: s = 'Hello World'
+
+In [167]: s.lower()
+Out[167]: 'hello world'
+
+In [168]: s = 'Hello World'
+
+In [169]: s.upper().lower()
+Out[169]: 'hello world'
+
+In [170]: s.upper()
+Out[170]: 'HELLO WORLD'
+
+In [171]: s.upper().lower()
+Out[171]: 'hello world'
+
+In [172]: s.upper().lower().upper().lower()
+Out[172]: 'hello world'
+
+In [173]: s = 'abcdefghijklmnopqrstuvwxyz'
+
+In [174]: s
+Out[174]: 'abcdefghijklmnopqrstuvwxyz'
+
+In [175]: for i in s:
+     ...:     print(s[::-1])
+     ...:     break
+     ...:
+zyxwvutsrqponmlkjihgfedcba
+
+In [176]: for i in range(26):
+     ...:     print(s[-i])
+     ...:
+a
+z
+y
+x
+w
+v
+u
+t
+s
+r
+q
+p
+o
+n
+m
+l
+k
+j
+i
+h
+g
+f
+e
+d
+c
+b
+
+In [177]: for i in range(1, 26):
+     ...:     print(s[-i])
+     ...:
+z
+y
+x
+w
+v
+u
+t
+s
+r
+q
+p
+o
+n
+m
+l
+k
+j
+i
+h
+g
+f
+e
+d
+c
+b
+
+In [178]: for i in s[::-1]:
+     ...:     print(i)
+     ...:
+     ...:
+z
+y
+x
+w
+v
+u
+t
+s
+r
+q
+p
+o
+n
+m
+l
+k
+j
+i
+h
+g
+f
+e
+d
+c
+b
+a
+
+In [179]: s[::-1]
+Out[179]: 'zyxwvutsrqponmlkjihgfedcba'
+
+In [180]: c = s[::2]
+
+In [181]: c
+Out[181]: 'acegikmoqsuwy'
+
+In [182]: c
+Out[182]: 'acegikmoqsuwy'
+
+In [183]: c.replace('a', 4)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+~/SciPyCourse2020/notes/02_Python_basics_2/more_basics.py in <module>
+----> 1 c.replace('a', 4)
+
+TypeError: replace() argument 2 must be str, not int
+> <ipython-input-183-56bd93e96717>(1)<module>()
+----> 1 c.replace('a', 4)
+
+ipdb> c
+
+In [184]: c.replace('a', '4')
+Out[184]: '4cegikmoqsuwy'
+
+In [185]: c.replace('a', '4').replace('e', '3')
+Out[185]: '4c3gikmoqsuwy'
+
+In [186]: c.replace('a', '4').replace('e', '3').replace('i', '1')
+Out[186]: '4c3g1kmoqsuwy'
+
+In [187]: c.replace('a', '4').replace('e', '3').replace('i', 1)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+~/SciPyCourse2020/notes/02_Python_basics_2/more_basics.py in <module>
+----> 1 c.replace('a', '4').replace('e', '3').replace('i', 1)
+
+TypeError: replace() argument 2 must be str, not int
+> <ipython-input-187-755a1daeb6af>(1)<module>()
+----> 1 c.replace('a', '4').replace('e', '3').replace('i', 1)
+
+ipdb> c
+
+In [188]: c.replace('a', '4').replace('e', '3').replace('i', '1')
+Out[188]: '4c3g1kmoqsuwy'
+
+In [189]: def add(x, y):
+     ...:     """Return sum of x and y"""
+     ...:     result = x + y
+     ...:     return result
+     ...:
+
+In [190]: add
+Out[190]: <function __main__.add(x, y)>
+
+In [191]: whos
+Variable   Type        Data/Info
+--------------------------------
+a          str         o
+add        function    <function add at 0x7f4bc52c8d90>
+b          int         123
+c          str         acegikmoqsuwy
+i          str         a
+n          complex     (1+2j)
+s          str         abcdefghijklmnopqrstuvwxyz
+t          str
+value      str         Joe
+w          str         \n
+
+In [192]: add?
+Signature: add(x, y)
+Docstring: Return sum of x and y
+File:      ~/SciPyCourse2020/notes/02_Python_basics_2/<ipython-input-189-e36ec8ebf313>
+Type:      function
+
+In [193]: add?
+Signature: add(x, y)
+Docstring: Return sum of x and y
+File:      ~/SciPyCourse2020/notes/02_Python_basics_2/<ipython-input-189-e36ec8ebf313>
+Type:      function
+
+In [194]: add(5, 2)
+Out[194]: 7
+
+In [195]: add(50, 20)
+Out[195]: 70
+
+In [196]: add(20, 50)
+Out[196]: 70
+
+In [197]: def add(y, x):
+     ...:     """Return sum of x and y"""
+     ...:     result = x + y
+     ...:     return result
+     ...:
+
+In [198]: add?
+Signature: add(y, x)
+Docstring: Return sum of x and y
+File:      ~/SciPyCourse2020/notes/02_Python_basics_2/<ipython-input-197-040a10c621ca>
+Type:      function
+
+In [199]: add(5, 2)
+Out[199]: 7
+
+In [200]: def subtract(x, y):
+     ...:     """Return x - y"""
+     ...:     result = x - y
+     ...:     return result
+     ...:
+
+In [201]: subtract?
+Signature: subtract(x, y)
+Docstring: Return x - y
+File:      ~/SciPyCourse2020/notes/02_Python_basics_2/<ipython-input-200-e6a80062c8a4>
+Type:      function
+
+In [202]: subtact(7, 2)
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+~/SciPyCourse2020/notes/02_Python_basics_2/more_basics.py in <module>
+----> 1 subtact(7, 2)
+
+NameError: name 'subtact' is not defined
+> <ipython-input-202-297801a6bef7>(1)<module>()
+----> 1 subtact(7, 2)
+
+ipdb> c
+
+In [203]: subtract(7, 2)
+Out[203]: 5
+
+In [204]: subtract(2, 7)
+Out[204]: -5
+
+In [205]: def subtract(y, x):
+     ...:     """Return x - y"""
+     ...:     result = x - y
+     ...:     return result
+     ...:
+
+In [206]: subtract(7, 2)
+Out[206]: -5
+
+In [207]: def add3(x, y, z=0):
+     ...:     """Add two numbers x and y, and optionally z"""
+     ...:     result = x + y + z
+     ...:     return result
+     ...:
+
+In [208]: add3(5, 2)
+Out[208]: 7
+
+In [209]: add3(5, 2, 0)
+Out[209]: 7
+
+In [210]: add3(5, 2, 3)
+Out[210]: 10
+
+In [211]: add3(5, 2, z=3)
+Out[211]: 10
+
+In [212]: def add4(x, y, z=0, q=0):
+     ...:     """Add two numbers x and y, and optionally z and q"""
+     ...:     result = x + y + z + q
+     ...:     return result
+     ...:
+     ...:
+
+In [213]: add4(5, 2)
+Out[213]: 7
+
+In [214]: add4(5, 2, 3, 1)
+Out[214]: 11
+
+In [215]: add4(5, 2, z=3, q=1)
+Out[215]: 11
+
+In [216]: add4(5, 2, q=10, z=2)
+Out[216]: 19
+
+In [217]: add4(5, 2, z=10, q=2)
+Out[217]: 19
+
+In [218]: add4(5, 2, q=10, z=2)
+Out[218]: 19
+
+In [219]: add4(q=10, z=2, 5, 2)
+  File "<ipython-input-219-9b69e8ff647f>", line 1
+    add4(q=10, z=2, 5, 2)
+                   ^
+SyntaxError: positional argument follows keyword argument
+
+
+In [220]: add4(5, 2, q=10, z=2)
+Out[220]: 19
+
+In [221]: add4(5, 2, q=10)
+Out[221]: 17
+
+In [222]: def add4(x, y, z=0, q=0):
+     ...:     """Add two numbers x and y, and optionally z and q"""
+     ...:     return x + y + z + q
+     ...:
+     ...:
+
+In [223]: add4(5, 2, q=10)
+Out[223]: 17
+
+In [224]: def addsubtract(x, y):
+     ...:     """Return the sum and the difference of two numbers x and y"""
+     ...:     s = x + y
+     ...:     d = x - y
+     ...:     return s, d
+     ...:
+
+In [225]: addsubtract(5, 2)
+Out[225]: (7, 3)
+
+In [226]: type(addsubtract(5, 2))
+Out[226]: tuple
+
+In [227]: addsubtract(5, 2)
+Out[227]: (7, 3)
+
+In [228]: result = addsubtract(5, 2)
+
+In [229]: result[0]
+Out[229]: 7
+
+In [230]: result[1]
+Out[230]: 3
+
+In [231]: reset
+Once deleted, variables cannot be recovered. Proceed (y/[n])? y
+
+In [232]: wos
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-232-365c557c0d3d> in <module>
+----> 1 wos
+
+NameError: name 'wos' is not defined
+> <ipython-input-232-365c557c0d3d>(1)<module>()
+----> 1 wos
+
+ipdb> c
+
+In [233]: whos
+Interactive namespace is empty.
+
+In [234]: def addsubtract(x, y):
+     ...:     """Return the sum and the difference of two numbers x and y"""
+     ...:     s = x + y
+     ...:     d = x - y
+     ...:     return s, d
+     ...:
+
+In [235]: whos
+Variable      Type        Data/Info
+-----------------------------------
+addsubtract   function    <function addsubtract at 0x7f4bc8326e18>
+
+In [236]: addsubtract(5, 2)
+Out[236]: (7, 3)
+
+In [237]: s in addsubtract
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-237-08cda9314be4> in <module>
+----> 1 s in addsubtract
+
+NameError: name 's' is not defined
+> <ipython-input-237-08cda9314be4>(1)<module>()
+----> 1 s in addsubtract
+
+ipdb> c
+
+In [238]: whos
+Variable      Type        Data/Info
+-----------------------------------
+addsubtract   function    <function addsubtract at 0x7f4bc8326e18>
+
+In [239]: a = 1
+
+In [240]: def test(x):
+     ...:     blah = a + x
+     ...:     return blah
+     ...:
+
+In [241]: test(10)
+Out[241]: 11
+
+In [242]: b = test(10)
+
+In [243]: b
+Out[243]: 11
+
+In [244]: blah
+---------------------------------------------------------------------------
+NameError                                 Traceback (most recent call last)
+<ipython-input-244-4cbd040533a2> in <module>
+----> 1 blah
+
+NameError: name 'blah' is not defined
+> <ipython-input-244-4cbd040533a2>(1)<module>()
+----> 1 blah
+
+ipdb> c
+
+In [245]: MYLONGNAMEDVARIABLE = 1
+
+In [246]: def test(x):
+     ...:     blah = MYLONGNAMEDVARIABLE + x
+     ...:     return blah
+     ...:
+
+In [247]: test(10)
+Out[247]: 11
+
+In [248]: a = 1
+
+In [249]: a = 2
+
+In [250]: MYLONGNAMEDVARIABLE = 2
+
+In [251]: test(10)
+Out[251]: 12
+
+In [252]:

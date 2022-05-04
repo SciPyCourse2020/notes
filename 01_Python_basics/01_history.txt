@@ -1,0 +1,978 @@
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ pwd
+/home/mspacek/SciPyCourse2020/notes/01_Python_basics
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ ls
+01_Python_basics.md  01_Python_basics.pdf
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ cd ..
+mspacek@Godel:~/SciPyCourse2020/notes$ ls
+00_intro            03_collections  06_fileio_mpl    09_pandas      12_clustering  homework3  README.md
+01_Python_basics    04_numpy        07_mpl_matrices  10_stats       homework1      homework4
+02_Python_basics_2  05_numpy_dtype  08_images        11_organizing  homework2      old_notes
+mspacek@Godel:~/SciPyCourse2020/notes$ cd 01_Python_basics/
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ cd ..
+mspacek@Godel:~/SciPyCourse2020/notes$ ls 00_intro/
+ 00_intro.md    Figure_1.png   LFP_analysis_example.py  'The Incredible Growth of Python _ Stack Overflow.pdf'
+ 00_intro.pdf   Figure_2.png   LFP_example_data.npy
+mspacek@Godel:~/SciPyCourse2020/notes$ pwd
+/home/mspacek/SciPyCourse2020/notes
+mspacek@Godel:~/SciPyCourse2020/notes$ cd
+mspacek@Godel:~$ cd -
+/home/mspacek/SciPyCourse2020/notes
+mspacek@Godel:~/SciPyCourse2020/notes$ cd -
+/home/mspacek
+mspacek@Godel:~$ cd -
+/home/mspacek/SciPyCourse2020/notes
+mspacek@Godel:~/SciPyCourse2020/notes$ cd -
+/home/mspacek
+mspacek@Godel:~$ cd -
+/home/mspacek/SciPyCourse2020/notes
+mspacek@Godel:~/SciPyCourse2020/notes$ ls
+00_intro            03_collections  06_fileio_mpl    09_pandas      12_clustering  homework3  README.md
+01_Python_basics    04_numpy        07_mpl_matrices  10_stats       homework1      homework4
+02_Python_basics_2  05_numpy_dtype  08_images        11_organizing  homework2      old_notes
+mspacek@Godel:~/SciPyCourse2020/notes$ cd ~
+mspacek@Godel:~$ pwd
+/home/mspacek
+mspacek@Godel:~$ cd SciPyCourse20
+SciPyCourse2017/ SciPyCourse2018/ SciPyCourse2019/ SciPyCourse2020/
+mspacek@Godel:~$ cd SciPyCourse2020
+mspacek@Godel:~/SciPyCourse2020$ ls
+ announcement.txt  'Intro Python Spacek_BelegInfoExcel.xlsx'   SciPyCourse2020.geany
+ attendance.ods     misc                                       scipycourse2020.github.io
+ cheat_sheets       notes                                      Spacek_Python_course_registration.xlsx
+ grades.ods         projects                                   video
+ intro_email.txt    registration.ods                           VVZ_MScNeuro_2020_06_03.pdf
+mspacek@Godel:~/SciPyCourse2020$ cd note
+bash: cd: note: No such file or directory
+mspacek@Godel:~/SciPyCourse2020$ cd notes
+mspacek@Godel:~/SciPyCourse2020/notes$ cd /
+mspacek@Godel:/$ ls
+bin   core  etc   initrd.img      lib    lib64       media  opt   root  sbin  srv       sys  usr  vmlinuz
+boot  dev   home  initrd.img.old  lib32  lost+found  mnt    proc  run   snap  swapfile  tmp  var  vmlinuz.old
+mspacek@Godel:/$ cd -
+/home/mspacek/SciPyCourse2020/notes
+mspacek@Godel:~/SciPyCourse2020/notes$ ls
+00_intro            03_collections  06_fileio_mpl    09_pandas      12_clustering  homework3  README.md
+01_Python_basics    04_numpy        07_mpl_matrices  10_stats       homework1      homework4
+02_Python_basics_2  05_numpy_dtype  08_images        11_organizing  homework2      old_notes
+mspacek@Godel:~/SciPyCourse2020/notes$ cd 01_Python_basics/
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ ls
+01_Python_basics.md  01_Python_basics.pdf
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ ls -al
+total 136
+drwxrwxr-x  2 mspacek mspacek   4096 Apr 21 04:22 .
+drwxrwxr-x 21 mspacek mspacek   4096 Feb  4 15:28 ..
+-rw-rw-r--  1 mspacek mspacek   8471 Apr 21 01:42 01_Python_basics.md
+-rw-------  1 mspacek mspacek 116539 Apr 21 01:48 01_Python_basics.pdf
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ ls -al
+total 136
+drwxrwxr-x  2 mspacek mspacek   4096 Apr 21 04:22 .
+drwxrwxr-x 21 mspacek mspacek   4096 Feb  4 15:28 ..
+-rw-rw-r--  1 mspacek mspacek   8471 Apr 21 01:42 01_Python_basics.md
+-rw-------  1 mspacek mspacek 116539 Apr 21 01:48 01_Python_basics.pdf
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ ls
+01_Python_basics.md  01_Python_basics.pdf
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ mkdir --help
+Usage: mkdir [OPTION]... DIRECTORY...
+Create the DIRECTORY(ies), if they do not already exist.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -m, --mode=MODE   set file mode (as in chmod), not a=rwx - umask
+  -p, --parents     no error if existing, make parent directories as needed
+  -v, --verbose     print a message for each created directory
+  -Z                   set SELinux security context of each created directory
+                         to the default type
+      --context[=CTX]  like -Z, or if CTX is specified then set the SELinux
+                         or SMACK security context to CTX
+      --help     display this help and exit
+      --version  output version information and exit
+
+GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+Full documentation at: <http://www.gnu.org/software/coreutils/mkdir>
+or available locally via: info '(coreutils) mkdir invocation'
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ mkdir test
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ ls
+01_Python_basics.md  01_Python_basics.pdf  test
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ ls -al
+total 140
+drwxrwxr-x  3 mspacek mspacek   4096 Apr 21 13:48 .
+drwxrwxr-x 21 mspacek mspacek   4096 Feb  4 15:28 ..
+-rw-rw-r--  1 mspacek mspacek   8471 Apr 21 01:42 01_Python_basics.md
+-rw-------  1 mspacek mspacek 116539 Apr 21 01:48 01_Python_basics.pdf
+drwxrwxr-x  2 mspacek mspacek   4096 Apr 21 13:48 test
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ cd test
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ touch testfile.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls
+testfile.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls -al
+total 8
+drwxrwxr-x 2 mspacek mspacek 4096 Apr 21 13:50 .
+drwxrwxr-x 3 mspacek mspacek 4096 Apr 21 13:48 ..
+-rw-rw-r-- 1 mspacek mspacek    0 Apr 21 13:50 testfile.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ touch testfile.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls -al
+total 8
+drwxrwxr-x 2 mspacek mspacek 4096 Apr 21 13:50 .
+drwxrwxr-x 3 mspacek mspacek 4096 Apr 21 13:48 ..
+-rw-rw-r-- 1 mspacek mspacek    0 Apr 21 13:51 testfile.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ mv testfile.txt testfile2.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls
+testfile2.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls -al
+total 8
+drwxrwxr-x 2 mspacek mspacek 4096 Apr 21 13:52 .
+drwxrwxr-x 3 mspacek mspacek 4096 Apr 21 13:48 ..
+-rw-rw-r-- 1 mspacek mspacek    0 Apr 21 13:51 testfile2.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ cat testfile2.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ cat > testfile2.txt
+hello!
+goodbye!
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ cat testfile2.txt
+hello!
+goodbye!
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls -al
+total 12
+drwxrwxr-x 2 mspacek mspacek 4096 Apr 21 13:52 .
+drwxrwxr-x 3 mspacek mspacek 4096 Apr 21 13:48 ..
+-rw-rw-r-- 1 mspacek mspacek   16 Apr 21 13:54 testfile2.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ cp testfile2.txt testfile3.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls
+testfile2.txt  testfile3.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls -al
+total 16
+drwxrwxr-x 2 mspacek mspacek 4096 Apr 21 13:55 .
+drwxrwxr-x 3 mspacek mspacek 4096 Apr 21 13:48 ..
+-rw-rw-r-- 1 mspacek mspacek   16 Apr 21 13:54 testfile2.txt
+-rw-rw-r-- 1 mspacek mspacek   16 Apr 21 13:55 testfile3.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ cat testfile3.txt
+hello!
+goodbye!
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ cat testfile2.txt
+hello!
+goodbye!
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ cp testfile2.txt ..
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ cd ..
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ ls
+01_Python_basics.md  01_Python_basics.pdf  test  testfile2.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ rm testfile2.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ ls
+01_Python_basics.md  01_Python_basics.pdf  test
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ ls -al
+total 140
+drwxrwxr-x  3 mspacek mspacek   4096 Apr 21 13:56 .
+drwxrwxr-x 21 mspacek mspacek   4096 Feb  4 15:28 ..
+-rw-rw-r--  1 mspacek mspacek   8471 Apr 21 01:42 01_Python_basics.md
+-rw-------  1 mspacek mspacek 116539 Apr 21 01:48 01_Python_basics.pdf
+drwxrwxr-x  2 mspacek mspacek   4096 Apr 21 13:55 test
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ ls -al
+total 140
+drwxrwxr-x  3 mspacek mspacek   4096 Apr 21 13:56 .
+drwxrwxr-x 21 mspacek mspacek   4096 Feb  4 15:28 ..
+-rw-rw-r--  1 mspacek mspacek   8471 Apr 21 01:42 01_Python_basics.md
+-rw-------  1 mspacek mspacek 116539 Apr 21 01:48 01_Python_basics.pdf
+drwxrwxr-x  2 mspacek mspacek   4096 Apr 21 13:55 test
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ ls -al > file_list.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ ls
+01_Python_basics.md  01_Python_basics.pdf  file_list.txt  test
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ cat file_list.txt
+total 140
+drwxrwxr-x  3 mspacek mspacek   4096 Apr 21 13:58 .
+drwxrwxr-x 21 mspacek mspacek   4096 Feb  4 15:28 ..
+-rw-rw-r--  1 mspacek mspacek   8471 Apr 21 01:42 01_Python_basics.md
+-rw-------  1 mspacek mspacek 116539 Apr 21 01:48 01_Python_basics.pdf
+-rw-rw-r--  1 mspacek mspacek      0 Apr 21 13:58 file_list.txt
+drwxrwxr-x  2 mspacek mspacek   4096 Apr 21 13:55 test
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ ls
+01_Python_basics.md  01_Python_basics.pdf  test
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ cd test
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls
+testfile2.txt  testfile3.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ^CGodel:~/SciPyCourse2020/notes/01_Python_basics/[mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ^C
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ^C
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ^C
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls
+testfile2.txt  testfile3.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ rm testfile2.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ rm testfile3.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ mkdir tmp
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls
+tmp
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ cd tmp
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test/tmp$ pwd
+/home/mspacek/SciPyCourse2020/notes/01_Python_basics/test/tmp
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test/tmp$ touch test.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test/tmp$ ls
+test.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test/tmp$ mv test.txt empty.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test/tmp$ ls
+empty.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test/tmp$ cat > test2.txt
+blah blah blah
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test/tmp$ ls
+empty.txt  test2.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test/tmp$ ls -al
+total 12
+drwxrwxr-x 2 mspacek mspacek 4096 Apr 21 14:14 .
+drwxrwxr-x 3 mspacek mspacek 4096 Apr 21 14:12 ..
+-rw-rw-r-- 1 mspacek mspacek    0 Apr 21 14:13 empty.txt
+-rw-rw-r-- 1 mspacek mspacek   15 Apr 21 14:14 test2.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test/tmp$ cat test2.txt
+blah blah blah
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test/tmp$ cp test2.txt test3.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test/tmp$ rm test2.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test/tmp$ ls
+empty.txt  test3.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test/tmp$ ls -al
+total 12
+drwxrwxr-x 2 mspacek mspacek 4096 Apr 21 14:15 .
+drwxrwxr-x 3 mspacek mspacek 4096 Apr 21 14:12 ..
+-rw-rw-r-- 1 mspacek mspacek    0 Apr 21 14:13 empty.txt
+-rw-rw-r-- 1 mspacek mspacek   15 Apr 21 14:15 test3.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test/tmp$ ls -al > tmp_list.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test/tmp$ ls
+empty.txt  test3.txt  tmp_list.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test/tmp$ cd ..
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls
+tmp
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls tmp
+empty.txt  test3.txt  tmp_list.txt
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ cp tmp tmp2
+cp: -r not specified; omitting directory 'tmp'
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls
+tmp
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ cp --help
+Usage: cp [OPTION]... [-T] SOURCE DEST
+  or:  cp [OPTION]... SOURCE... DIRECTORY
+  or:  cp [OPTION]... -t DIRECTORY SOURCE...
+Copy SOURCE to DEST, or multiple SOURCE(s) to DIRECTORY.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -a, --archive                same as -dR --preserve=all
+      --attributes-only        don't copy the file data, just the attributes
+      --backup[=CONTROL]       make a backup of each existing destination file
+  -b                           like --backup but does not accept an argument
+      --copy-contents          copy contents of special files when recursive
+  -d                           same as --no-dereference --preserve=links
+  -f, --force                  if an existing destination file cannot be
+                                 opened, remove it and try again (this option
+                                 is ignored when the -n option is also used)
+  -i, --interactive            prompt before overwrite (overrides a previous -n
+                                  option)
+  -H                           follow command-line symbolic links in SOURCE
+  -l, --link                   hard link files instead of copying
+  -L, --dereference            always follow symbolic links in SOURCE
+  -n, --no-clobber             do not overwrite an existing file (overrides
+                                 a previous -i option)
+  -P, --no-dereference         never follow symbolic links in SOURCE
+  -p                           same as --preserve=mode,ownership,timestamps
+      --preserve[=ATTR_LIST]   preserve the specified attributes (default:
+                                 mode,ownership,timestamps), if possible
+                                 additional attributes: context, links, xattr,
+                                 all
+      --no-preserve=ATTR_LIST  don't preserve the specified attributes
+      --parents                use full source file name under DIRECTORY
+  -R, -r, --recursive          copy directories recursively
+      --reflink[=WHEN]         control clone/CoW copies. See below
+      --remove-destination     remove each existing destination file before
+                                 attempting to open it (contrast with --force)
+      --sparse=WHEN            control creation of sparse files. See below
+      --strip-trailing-slashes  remove any trailing slashes from each SOURCE
+                                 argument
+  -s, --symbolic-link          make symbolic links instead of copying
+  -S, --suffix=SUFFIX          override the usual backup suffix
+  -t, --target-directory=DIRECTORY  copy all SOURCE arguments into DIRECTORY
+  -T, --no-target-directory    treat DEST as a normal file
+  -u, --update                 copy only when the SOURCE file is newer
+                                 than the destination file or when the
+                                 destination file is missing
+  -v, --verbose                explain what is being done
+  -x, --one-file-system        stay on this file system
+  -Z                           set SELinux security context of destination
+                                 file to default type
+      --context[=CTX]          like -Z, or if CTX is specified then set the
+                                 SELinux or SMACK security context to CTX
+      --help     display this help and exit
+      --version  output version information and exit
+
+By default, sparse SOURCE files are detected by a crude heuristic and the
+corresponding DEST file is made sparse as well.  That is the behavior
+selected by --sparse=auto.  Specify --sparse=always to create a sparse DEST
+file whenever the SOURCE file contains a long enough sequence of zero bytes.
+Use --sparse=never to inhibit creation of sparse files.
+
+When --reflink[=always] is specified, perform a lightweight copy, where the
+data blocks are copied only when modified.  If this is not possible the copy
+fails, or if --reflink=auto is specified, fall back to a standard copy.
+
+The backup suffix is '~', unless set with --suffix or SIMPLE_BACKUP_SUFFIX.
+The version control method may be selected via the --backup option or through
+the VERSION_CONTROL environment variable.  Here are the values:
+
+  none, off       never make backups (even if --backup is given)
+  numbered, t     make numbered backups
+  existing, nil   numbered if numbered backups exist, simple otherwise
+  simple, never   always make simple backups
+
+As a special case, cp makes a backup of SOURCE when the force and backup
+options are given and SOURCE and DEST are the same name for an existing,
+regular file.
+
+GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+Full documentation at: <http://www.gnu.org/software/coreutils/cp>
+or available locally via: info '(coreutils) cp invocation'
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ cp -r tmp tmp2
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls
+tmp  tmp2
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ rm tmp
+rm: cannot remove 'tmp': Is a directory
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ rm -r tmp
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls
+tmp2
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ rm -r tmp2
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ mkdir tmp
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ rm --help
+Usage: rm [OPTION]... [FILE]...
+Remove (unlink) the FILE(s).
+
+  -f, --force           ignore nonexistent files and arguments, never prompt
+  -i                    prompt before every removal
+  -I                    prompt once before removing more than three files, or
+                          when removing recursively; less intrusive than -i,
+                          while still giving protection against most mistakes
+      --interactive[=WHEN]  prompt according to WHEN: never, once (-I), or
+                          always (-i); without WHEN, prompt always
+      --one-file-system  when removing a hierarchy recursively, skip any
+                          directory that is on a file system different from
+                          that of the corresponding command line argument
+      --no-preserve-root  do not treat '/' specially
+      --preserve-root   do not remove '/' (default)
+  -r, -R, --recursive   remove directories and their contents recursively
+  -d, --dir             remove empty directories
+  -v, --verbose         explain what is being done
+      --help     display this help and exit
+      --version  output version information and exit
+
+By default, rm does not remove directories.  Use the --recursive (-r or -R)
+option to remove each listed directory, too, along with all of its contents.
+
+To remove a file whose name starts with a '-', for example '-foo',
+use one of these commands:
+  rm -- -foo
+
+  rm ./-foo
+
+Note that if you use rm to remove a file, it might be possible to recover
+some of its contents, given sufficient expertise and/or time.  For greater
+assurance that the contents are truly unrecoverable, consider using shred.
+
+GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+Full documentation at: <http://www.gnu.org/software/coreutils/rm>
+or available locally via: info '(coreutils) rm invocation'
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls
+tmp
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ rm -rv tmp
+removed directory 'tmp'
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ mkdir tmp\ long\ name
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls
+'tmp long name'
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ rm -r tmp\ long\ name/
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ ls
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics/test$ cd ..
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ rm -r test
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ man mkdir
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ man mkdir
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ mkdir --help
+Usage: mkdir [OPTION]... DIRECTORY...
+Create the DIRECTORY(ies), if they do not already exist.
+
+Mandatory arguments to long options are mandatory for short options too.
+  -m, --mode=MODE   set file mode (as in chmod), not a=rwx - umask
+  -p, --parents     no error if existing, make parent directories as needed
+  -v, --verbose     print a message for each created directory
+  -Z                   set SELinux security context of each created directory
+                         to the default type
+      --context[=CTX]  like -Z, or if CTX is specified then set the SELinux
+                         or SMACK security context to CTX
+      --help     display this help and exit
+      --version  output version information and exit
+
+GNU coreutils online help: <http://www.gnu.org/software/coreutils/>
+Full documentation at: <http://www.gnu.org/software/coreutils/mkdir>
+or available locally via: info '(coreutils) mkdir invocation'
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ python
+Python 2.7.17 (default, Nov  7 2019, 10:07:09)
+[GCC 7.4.0] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ python3
+Python 3.6.9 (default, Nov  7 2019, 10:44:02)
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 1+1
+2
+>>> 1 + 2*5
+11
+>>> 2**2
+4
+>>> 2**3
+8
+>>> 5/2
+2.5
+>>> 5/2
+2.5
+>>> 5/2
+2.5
+>>> 5/2
+2.5
+>>> print('hello world!')
+hello world!
+>>> print("hello world!")
+hello world!
+>>> print(''hello world!'')
+  File "<stdin>", line 1
+    print(''hello world!'')
+                ^
+SyntaxError: invalid syntax
+>>> print('hello world!')
+hello world!
+>>> input('hello? ')
+hello? hi!
+'hi!'
+>>>
+>>>
+>>>
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ python3
+Python 3.6.9 (default, Nov  7 2019, 10:44:02)
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit
+Use exit() or Ctrl-D (i.e. EOF) to exit
+>>> exit()
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ python3
+Python 3.6.9 (default, Nov  7 2019, 10:44:02)
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ python3
+Python 3.6.9 (default, Nov  7 2019, 10:44:02)
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ ls
+01_Python_basics.md  01_Python_basics.pdf  hello.py
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ python3 hello.py
+hello world!
+2
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ python3 hello.py
+  File "hello.py", line 2
+    print('hello world!)
+                       ^
+SyntaxError: EOL while scanning string literal
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ python3 hello.py
+hello world!
+2
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ python3
+Python 3.6.9 (default, Nov  7 2019, 10:44:02)
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> 1+1
+2
+>>>
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ python3 hello.py
+hello world!
+2
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ python3
+Python 3.6.9 (default, Nov  7 2019, 10:44:02)
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> a = 1
+>>> a
+1
+>>>
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ python3
+Python 3.6.9 (default, Nov  7 2019, 10:44:02)
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> a
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'a' is not defined
+>>> a = 1
+>>> a
+1
+>>> print(a)
+1
+>>> a=1
+>>> a = 1
+>>> a = 1
+>>> a, b = 1, 2
+>>> a
+1
+>>> b
+2
+>>> a, b, c, d = 10, 11, 12, 13
+>>> a
+10
+>>> b
+11
+>>> c
+12
+>>> d
+13
+>>> a, b = 1, 2, 3
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: too many values to unpack (expected 2)
+>>> a = 1
+>>> a + 1
+2
+>>> b = a + 1
+>>> b
+2
+>>> a
+1
+>>> a += 1
+>>> a
+2
+>>> a += 1
+>>> a
+3
+>>> a += 1
+>>> a
+4
+>>> a += 100
+>>> a
+104
+>>> a -= 100
+>>> a
+4
+>>> a *= 2
+>>> a
+8
+>>> a /= 2
+>>> a
+4.0
+>>> a = -1
+>>> a
+-1
+>>> type(a)
+<class 'int'>
+>>> b = 4.0
+>>> type(b)
+<class 'float'>
+>>> 5 / 2
+2.5
+>>> 4 / 2
+2.0
+>>> c = 4 / 2
+>>> type(c)
+<class 'float'>
+>>> c
+2.0
+>>> int(c)
+2
+>>> d = int(c)
+>>> d
+2
+>>> float(2)
+2.0
+>>> e = float(2)
+>>> e
+2.0
+>>> int(2.5)
+2
+>>> int(2.9)
+2
+>>> round
+<built-in function round>
+>>> round(2.5)
+2
+>>> round(2.6)
+3
+>>> round(2.50000001)
+3
+>>> round(2.6)
+3
+>>> round?
+  File "<stdin>", line 1
+    round?
+         ^
+SyntaxError: invalid syntax
+>>> dir(round)
+['__call__', '__class__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__name__', '__ne__', '__new__', '__qualname__', '__reduce__', '__reduce_ex__', '__repr__', '__self__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__text_signature__']
+>>> help(round)
+
+>>> round(2.6)
+3
+>>> int(round(2.6))
+3
+>>> sdlfkjlwekjr = 43
+>>> A = 1
+>>> a = 2
+>>> A
+1
+>>> a
+2
+>>> a5 = 100
+>>> a5
+100
+>>> 5a = 100
+  File "<stdin>", line 1
+    5a = 100
+     ^
+SyntaxError: invalid syntax
+>>> myvariablename = 5
+>>> import math
+>>> sqrt(4)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'sqrt' is not defined
+>>> math.sqrt(4)
+2.0
+>>> math.log10(1000)
+3.0
+>>> help(math.sqrt)
+
+>>> mystring = 'hello'
+>>> mystring
+'hello'
+>>> True
+True
+>>> False
+False
+>>> passed = True
+>>> myval = False
+>>> myval
+False
+>>> type(myval)
+<class 'bool'>
+>>> True and True
+True
+>>> True or True
+True
+>>> True or False
+True
+>>> a = 5
+>>> True or False
+True
+>>> True and False
+False
+>>> None
+>>> a = None
+>>> print(a)
+None
+>>> a
+>>> a
+>>> a
+>>> a = None
+>>> a
+>>> print(a)
+None
+>>> not False
+True
+>>> not True
+False
+>>> a = not True
+>>> a
+False
+>>> a = 1
+>>> b = 2
+>>> a == 1
+True
+>>> a == 2
+False
+>>> b == 2
+True
+>>> a
+1
+>>> a != 1
+False
+>>> a > 5
+False
+>>> a < 5
+True
+>>> a >= 1
+True
+>>> a >= 2
+False
+>>> a <= 0
+False
+>>> a <= 1
+True
+>>> 1 < 2 < 3
+True
+>>> 1 < 2 > 3
+False
+>>> b = 10
+>>> 5 < b < 8
+False
+>>> 5 < b < 15
+True
+>>> a = 1
+>>> if a == 1:
+...     print('a is 1')
+...
+a is 1
+>>> a = 2
+>>> if a == 1:
+...     print('a is 1')
+...
+>>> if a == 1:
+...     print('a is 1')
+... elif a == 2:
+...     print('a is 2')
+...
+a is 2
+>>> if a == 1:
+...     print('a is 1')
+... elif a == 2:
+...     print('a is 2')
+... else:
+...     print('a is something else')
+...
+a is 2
+>>> a = 99
+>>> if a == 1:
+...     print('a is 1')
+... elif a == 2:
+...     print('a is 2')
+... else:
+...     print('a is something else')
+...
+a is something else
+>>>
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ python3 hello.py
+a is something else
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ python3 hello.py
+a is 1
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ python3
+Python 3.6.9 (default, Nov  7 2019, 10:44:02)
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> print('hi')
+hi
+>>> print('hi')
+hi
+>>> print('hi')
+hi
+>>> print('hi')
+hi
+>>> print('hi')
+hi
+>>> for i in range(5):
+...     print('hi')
+...
+hi
+hi
+hi
+hi
+hi
+>>> for i in range(5):
+...     print(i)
+...
+0
+1
+2
+3
+4
+>>> for blarg in range(5):
+...     print(blarg)
+...
+0
+1
+2
+3
+4
+>>> range(5)
+range(0, 5)
+>>> for i in range(1, 5):
+...     print(i)
+...
+1
+2
+3
+4
+>>> for i in range(0, 10, 2):
+...     print(i)
+...
+0
+2
+4
+6
+8
+>>> for i in range(10, 0, -2):
+...     p
+KeyboardInterrupt
+>>> for i in range(10, 5, -1):
+...     print(i)
+...
+10
+9
+8
+7
+6
+>>> for i in range(5);
+  File "<stdin>", line 1
+    for i in range(5);
+                     ^
+SyntaxError: invalid syntax
+>>> for i in range(5):
+...     if i == 3:
+...         break
+...     print(i)
+...
+0
+1
+2
+>>> for i in range(5):
+...     if i == 3:
+...         continue
+...     print(i)
+...
+0
+1
+2
+4
+>>> a = 0
+>>> while a < 5:
+...     print('hi')
+...
+KeyboardInterrupt
+>>> a = 0
+>>> while a < 5:
+...     print('hi')
+...     a += 1
+...
+hi
+hi
+hi
+hi
+hi
+>>> genius = 2 + 2
+>>> genius
+4
+>>> for i in range(0, 10):
+...     print(i)
+...
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+>>> for i in range(10):
+...     print(i)
+...
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+>>>
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ ls
+01_Python_basics.md  01_Python_basics.pdf  basics.py  hello.py
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ python3 basics.py
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ python3 basics.py
+0
+1
+4
+9
+16
+25
+36
+49
+64
+81
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ python3 basics.py
+0
+1
+4
+9
+16
+25
+36
+49
+64
+81
+285
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ python3 basics.py
+0.0
+1.0
+1.4142135623730951
+1.7320508075688772
+2.0
+2.23606797749979
+2.449489742783178
+2.6457513110645907
+2.8284271247461903
+3.0
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ python3 basics.py
+0
+1
+2
+3
+4
+5
+6
+7
+seven
+8
+9
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ python3 basics.py
+0
+1
+2
+3
+three
+4
+5
+6
+7
+seven
+8
+9
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$ python3 basics.py
+10
+9
+8
+7
+seven
+6
+5
+4
+3
+three
+2
+1
+mspacek@Godel:~/SciPyCourse2020/notes/01_Python_basics$

@@ -1,0 +1,19 @@
+What are the differences between the Kolmogorov-Smirnov test and the Mann-Whitney U test?
+
+https://www.quora.com/What-are-the-differences-between-the-Kolmogorov-Smirnov-test-and-the-Mann-Whitney-U-test/answer/Ted-Wrigley
+
+Ted Wrigley
+·
+December 14, 2016
+Philosophy, spirituality, science, mathematics, politics...
+First, let’s discuss how these two test are similar. Both the Mann-Whitney U test and the Kolmogorov-Smirnov test are nonparametric tests: they do not rely on assumptions about the existence of distribution parameters — such as the mean and standard deviation — of the underlying population. That means that if we have odd data which doesn’t seem to fit into any identifiable or well-defined distribution, we can still do statistical testing; we just sacrifice the power we get by using distribution parameters.
+
+Side point: this is the nice thing about having well-defined distributions like the normal curve. The fact that such distributions are so well-defined means that their parameters (sometimes called ‘moments’) carry a lot of information that helps us do statistical analysis. Knowing that everything tends towards the mean in a normal distribution, or that the standard deviation has an unambiguous relationship to the probability of an outcome, means we can do very powerful statistical tests; we can leverage all that intrinsic information to give meaning to our results. In statistics, assumptions equal power: the more assumptions we can (safely) make about the distribution, the more power we can leverage in your results: i.e. the more likely we are to correctly reject a null hypothesis. But making bad assumptions increases the likelihood of incorrectly rejecting a null hypothesis — wrongly asserting a false theory is true — and that’s problematic. You do not want to rely on parameters unless you are confident they are meaningful. So nonparametric test become useful when our assumptions about underlying distributions are questionable.
+
+Now, for the differences… The Mann-Whitney U is a very simple test that makes almost no assumptions about any underlying distribution. All it requires is independent and ordinal data — data that can be rank-ordered, and where no data point is dependent on any other data point — and we’re good to go. It is not a particularly powerful statistical test as these things go, but since it makes few assumptions it is useable in many cases where it would be incorrect to use other more powerful tests. It relies on counting up the number of times a particular value in one sample set would ‘win’ over members of the other sample set. Technically speaking, there is no real distinction between a ‘one-sample’ and ‘two-sample’ version of the MW-U test; if there were two samples they would merely be aggregated into one sample with appropriate sample sets.
+
+The Kolmogorov-Smirnov test does not make any assumptions about the distribution of the data, but it does assume that the data is continuous (interval or ratio level) because it relies on subtracting the observed results from the theoretically assumed results; subsection does not have any meaning for ordinal (or nominal) data. Because the K-S test can assume interval or higher level data, it is a more powerful statistical test than the MW-U, assuming that assumption is valid.
+
+Use a K-S test if you don’t know enough to assume the data is part of an underlying well-defined distribution, but you do know that it is interval or ratio (continuous) data. Use the Mann-Whitney U if you know you have ordinal data and cannot make any assumptions about the underlying distribution.
+
+4.1K viewsView 8 Upvoters

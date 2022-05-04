@@ -1,0 +1,9 @@
+subject,start_time,end_time,stimulus,outcome
+A01,2.3,5.6,L,pass
+A01,1.6,2.1,R,pass
+A01,2.3,5.6,R,pass
+A01,4.0,10.2,R,fail
+A01,2.8,4.5,L,pass
+A01,0.7,6.1,L,pass
+A01,3.5,11.2,R,fail
+A01,2.7,5.6,L,pass

@@ -1,0 +1,1163 @@
+Out[12]: '1'
+
+In [13]: str = 5
+
+In [14]: str
+Out[14]: 5
+
+In [15]: str(1)
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-15-5c73dd08b6cc> in <module>
+----> 1 str(1)
+
+TypeError: 'int' object is not callable
+> <ipython-input-15-5c73dd08b6cc>(1)<module>()
+----> 1 str(1)
+
+ipdb> c
+
+In [16]: whos
+Variable     Type        Data/Info
+----------------------------------
+np           module      <module 'numpy' from '/us<...>kages/numpy/__init__.py'>
+plt          module      <module 'matplotlib.pyplo<...>es/matplotlib/pyplot.py'>
+result       NoneType    None
+str          int         5
+vowelcount   function    <function vowelcount at 0x7fae101a9e18>
+
+In [17]: clear()
+/bin/bash: -c: line 1: syntax error: unexpected end of file
+
+In [18]: del str
+
+In [19]: clear
+
+
+In [20]: whos
+Variable     Type        Data/Info
+----------------------------------
+np           module      <module 'numpy' from '/us<...>kages/numpy/__init__.py'>
+plt          module      <module 'matplotlib.pyplo<...>es/matplotlib/pyplot.py'>
+result       NoneType    None
+vowelcount   function    <function vowelcount at 0x7fae101a9e18>
+
+In [21]: str = 5
+
+In [22]: whos
+Variable     Type        Data/Info
+----------------------------------
+np           module      <module 'numpy' from '/us<...>kages/numpy/__init__.py'>
+plt          module      <module 'matplotlib.pyplo<...>es/matplotlib/pyplot.py'>
+result       NoneType    None
+str          int         5
+vowelcount   function    <function vowelcount at 0x7fae101a9e18>
+
+In [23]: del str
+
+In [24]: whos
+Variable     Type        Data/Info
+----------------------------------
+np           module      <module 'numpy' from '/us<...>kages/numpy/__init__.py'>
+plt          module      <module 'matplotlib.pyplo<...>es/matplotlib/pyplot.py'>
+result       NoneType    None
+vowelcount   function    <function vowelcount at 0x7fae101a9e18>
+
+In [25]: str?
+Init signature: str(self, /, *args, **kwargs)
+Docstring:
+str(object='') -> str
+str(bytes_or_buffer[, encoding[, errors]]) -> str
+
+Create a new string object from the given object. If encoding or
+errors is specified, then the object must expose a data buffer
+that will be decoded using the given encoding and error handler.
+Otherwise, returns the result of object.__str__() (if defined)
+or repr(object).
+encoding defaults to sys.getdefaultencoding().
+errors defaults to 'strict'.
+Type:           type
+Subclasses:     _rstr, LSString, include, str_
+
+In [26]: str(1)
+Out[26]: '1'
+
+In [27]: def vowelcount(string):
+    ...:     """Take a string, returns number of vowels"""
+    ...:     s2 = string.lower()
+    ...:     new = s2.replace('a','x').replace('e','x').replace('i','x').replace('o','x').replace('u','x')
+    ...:     result = new.count('x')
+    ...:     return result
+    ...:
+
+In [28]: vowelcount('abc')
+Out[28]: 1
+
+In [29]: vowelcount('abcx')
+Out[29]: 2
+
+In [30]: vowelcount('abcxx')
+Out[30]: 3
+
+In [31]: sum
+Out[31]: <function sum(iterable, start=0, /)>
+
+In [32]: sum?
+Signature: sum(iterable, start=0, /)
+Docstring:
+Return the sum of a 'start' value (default: 0) plus an iterable of numbers
+
+When the iterable is empty, return the start value.
+This function is intended specifically for use with numeric values and may
+reject non-numeric types.
+Type:      builtin_function_or_method
+
+In [33]: def metric(x, y):
+    ...:     """Calculate difference over sum"""
+    ...:     d = x - y
+    ...:     s = x + y
+    ...:     print('difference is %g, sum is %g' % (d, s))
+    ...:     # optional: handle divide by zero:
+    ...:     #if s == 0:
+    ...:     #    return 0
+    ...:     return d / s
+    ...:
+
+In [34]: metric(3, 2)
+difference is 1, sum is 5
+Out[34]: 0.2
+
+In [35]: metric(3.3, 2)
+difference is 1.3, sum is 5.3
+Out[35]: 0.2452830188679245
+
+In [36]: def metric(x, y):
+    ...:     """Calculate difference over sum"""
+    ...:     d = x - y
+    ...:     s = x + y
+    ...:     print('difference is %i, sum is %i' % (d, s))
+    ...:     # optional: handle divide by zero:
+    ...:     #if s == 0:
+    ...:     #    return 0
+    ...:     return d / s
+    ...:
+
+In [37]: metric(3.3, 2)
+difference is 1, sum is 5
+Out[37]: 0.2452830188679245
+
+In [38]: def metric(x, y):
+    ...:     """Prints difference, sum  auf x and y and returns difference/sum"""
+    ...:     sum1 = x + y
+    ...:     dif = x - y
+    ...:     if sum1 != 0:
+    ...:         divide = dif // sum1
+    ...:     else:
+    ...:         divide = 'N/A, sum is zero'
+    ...:     return 'difference is ', dif, 'sum is', sum1, '; difference/sum=', divide
+    ...:
+
+In [39]: metric(2, 3)
+Out[39]: ('difference is ', -1, 'sum is', 5, '; difference/sum=', -1)
+
+In [40]:  -1/5
+Out[40]: -0.2
+
+In [41]:  -1 // 5
+Out[41]: -1
+
+In [42]: 1//2
+Out[42]: 0
+
+In [43]: 2//3
+Out[43]: 0
+
+In [44]: 3//2
+Out[44]: 1
+
+In [45]: print?
+Docstring:
+print(value, ..., sep=' ', end='\n', file=sys.stdout, flush=False)
+
+Prints the values to a stream, or to sys.stdout by default.
+Optional keyword arguments:
+file:  a file-like object (stream); defaults to the current sys.stdout.
+sep:   string inserted between values, default a space.
+end:   string appended after the last value, default a newline.
+flush: whether to forcibly flush the stream.
+Type:      builtin_function_or_method
+
+In [46]: print('hi')
+hi
+
+In [47]: # Martin's solution:
+    ...: def multtable(n):
+    ...:     """Print multiplication table from 1 to n"""
+    ...:     for i in range(1, n+1): # rows
+    ...:         for j in range(1, n+1): # columns
+    ...:             print(i * j, end=' ')
+    ...:         print() # move to new line for next row
+    ...:
+
+In [48]: multtable(5)
+1 2 3 4 5
+2 4 6 8 10
+3 6 9 12 15
+4 8 12 16 20
+5 10 15 20 25
+
+In [49]: def multtable(n):
+    ...:     """Prints the mutliplication table from 1 to n in rows"""
+    ...:     for i in range(1,n+1):
+    ...:         for n in range(1,11):
+    ...:             print(n*i, end = ' ')
+    ...:         print()
+    ...:
+
+In [50]: multtable(5)
+1 2 3 4 5 6 7 8 9 10
+2 4 6 8 10 12 14 16 18 20
+3 6 9 12 15 18 21 24 27 30
+4 8 12 16 20 24 28 32 36 40
+5 10 15 20 25 30 35 40 45 50
+
+In [51]: t = (1, 2, 3)
+
+In [52]: type(t)
+Out[52]: tuple
+
+In [53]: t = ('a', True, 3.14)
+
+In [54]: t
+Out[54]: ('a', True, 3.14)
+
+In [55]: t = 'a', True, 3.14
+
+In [56]: t = 'a', True, 3.14
+
+In [57]: len(t)
+Out[57]: 3
+
+In [58]: t[0]
+Out[58]: 'a'
+
+In [59]: t[1]
+Out[59]: True
+
+In [60]: t[2]
+Out[60]: 3.14
+
+In [61]: t[3]
+---------------------------------------------------------------------------
+IndexError                                Traceback (most recent call last)
+<ipython-input-61-ffabd0b4a246> in <module>
+----> 1 t[3]
+
+IndexError: tuple index out of range
+> <ipython-input-61-ffabd0b4a246>(1)<module>()
+----> 1 t[3]
+
+ipdb> c
+
+In [62]: t[-1]
+Out[62]: 3.14
+
+In [63]: t[0:2]
+Out[63]: ('a', True)
+
+In [64]: t[:2]
+Out[64]: ('a', True)
+
+In [65]: t[::2]
+Out[65]: ('a', 3.14)
+
+In [66]: t
+Out[66]: ('a', True, 3.14)
+
+In [67]: t[0]
+Out[67]: 'a'
+
+In [68]: t[0] = 'b'
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-68-ad4eacfd6ab3> in <module>
+----> 1 t[0] = 'b'
+
+TypeError: 'tuple' object does not support item assignment
+> <ipython-input-68-ad4eacfd6ab3>(1)<module>()
+----> 1 t[0] = 'b'
+
+ipdb> c
+
+In [69]: t
+Out[69]: ('a', True, 3.14)
+
+In [70]: t.count?
+Docstring: T.count(value) -> integer -- return number of occurrences of value
+Type:      builtin_function_or_method
+
+In [71]: t.count(True)
+Out[71]: 1
+
+In [72]: t.index(True)
+Out[72]: 1
+
+In [73]: t = 'a', True, 3.14
+
+In [74]: t = ('a', True, 3.14)
+
+In [75]: t = ()
+
+In [76]: t
+Out[76]: ()
+
+In [77]: type(t)
+Out[77]: tuple
+
+In [78]: t = ()
+
+In [79]: len(t)
+Out[79]: 0
+
+In [80]: l = [1, 2, 3]
+
+In [81]: type(l)
+Out[81]: list
+
+In [82]: l = []
+
+In [83]: l
+Out[83]: []
+
+In [84]: len(l)
+Out[84]: 0
+
+In [85]: l = ['a', True, 3.14]
+
+In [86]: l
+Out[86]: ['a', True, 3.14]
+
+In [87]: t = ('a', True, 3.14)
+
+In [88]: t
+Out[88]: ('a', True, 3.14)
+
+In [89]: l
+Out[89]: ['a', True, 3.14]
+
+In [90]: t
+Out[90]: ('a', True, 3.14)
+
+In [91]: l
+Out[91]: ['a', True, 3.14]
+
+In [92]: t
+Out[92]: ('a', True, 3.14)
+
+In [93]: l
+Out[93]: ['a', True, 3.14]
+
+In [94]: l.append?
+Docstring: L.append(object) -> None -- append object to end
+Type:      builtin_function_or_method
+
+In [95]: l
+Out[95]: ['a', True, 3.14]
+
+In [96]: l.append(5)
+
+In [97]: l
+Out[97]: ['a', True, 3.14, 5]
+
+In [98]: newlist = l.append(6)
+
+In [99]: newlist
+
+In [100]: type(newlist)
+Out[100]: NoneType
+
+In [101]: print(newlist)
+None
+
+In [102]: l
+Out[102]: ['a', True, 3.14, 5, 6]
+
+In [103]: l = ['a', True, 3.14]
+
+In [104]: l
+Out[104]: ['a', True, 3.14]
+
+In [105]: l.extend([4, 5, 6])
+
+In [106]: l
+Out[106]: ['a', True, 3.14, 4, 5, 6]
+
+In [107]: len(l)
+Out[107]: 6
+
+In [108]: l.reverse()
+
+In [109]: l
+Out[109]: [6, 5, 4, 3.14, True, 'a']
+
+In [110]: l = [4, 6, 1, 2, 3]
+
+In [111]: l
+Out[111]: [4, 6, 1, 2, 3]
+
+In [112]: l.sort()
+
+In [113]: l
+Out[113]: [1, 2, 3, 4, 6]
+
+In [114]: l = ['a', True, 3.14]
+
+In [115]: l.sort()
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-115-fb07ac7c73ab> in <module>
+----> 1 l.sort()
+
+TypeError: '<' not supported between instances of 'bool' and 'str'
+> <ipython-input-115-fb07ac7c73ab>(1)<module>()
+----> 1 l.sort()
+
+ipdb> c
+
+In [116]: l
+Out[116]: ['a', True, 3.14]
+
+In [117]: l.clear()
+
+In [118]: l
+Out[118]: []
+
+In [119]: len(l)
+Out[119]: 0
+
+In [120]: l = []
+
+In [121]: for i in range(10):
+     ...:     l.append(2*i)
+     ...:
+
+In [122]: l
+Out[122]: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+
+In [123]: list(range(10))
+Out[123]: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+In [124]: t = 1, 2, 3
+
+In [125]: t
+Out[125]: (1, 2, 3)
+
+In [126]: list(t)
+Out[126]: [1, 2, 3]
+
+In [127]: list((1, 2, 3))
+Out[127]: [1, 2, 3]
+
+In [128]: tuple([1, 2, 3])
+Out[128]: (1, 2, 3)
+
+In [129]: l
+Out[129]: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
+
+In [130]: l[0]
+Out[130]: 0
+
+In [131]: del l[2]
+
+In [132]: l
+Out[132]: [0, 2, 6, 8, 10, 12, 14, 16, 18]
+
+In [133]: l[-1]
+Out[133]: 18
+
+In [134]: l[-2]
+Out[134]: 16
+
+In [135]: l[::2]
+Out[135]: [0, 6, 10, 14, 18]
+
+In [136]: t
+Out[136]: (1, 2, 3)
+
+In [137]: 3 in t
+Out[137]: True
+
+In [138]: 5 in t
+Out[138]: False
+
+In [139]: l
+Out[139]: [0, 2, 6, 8, 10, 12, 14, 16, 18]
+
+In [140]: 6 in l
+Out[140]: True
+
+In [141]: 1.1 in l
+Out[141]: False
+
+In [142]: l.index(6)
+Out[142]: 2
+
+In [143]: sequence = 5, True, 'blah'
+
+In [144]: for i in range(len(sequence)):
+     ...:     print(sequence[i])
+     ...:
+5
+True
+blah
+
+In [145]: for val in sequence:
+     ...:     print(val)
+     ...:
+5
+True
+blah
+
+In [146]: enumerate?
+Init signature: enumerate(self, /, *args, **kwargs)
+Docstring:
+enumerate(iterable[, start]) -> iterator for index, value of iterable
+
+Return an enumerate object.  iterable must be another object that supports
+iteration.  The enumerate object yields pairs containing a count (from
+start, which defaults to zero) and a value yielded by the iterable argument.
+enumerate is useful for obtaining an indexed list:
+    (0, seq[0]), (1, seq[1]), (2, seq[2]), ...
+Type:           type
+Subclasses:
+
+In [147]: for i, val in enumerate(sequence):
+     ...:     print(i, val)
+     ...:
+0 5
+1 True
+2 blah
+
+In [148]: sequence
+Out[148]: (5, True, 'blah')
+
+In [149]: zip?
+Init signature: zip(self, /, *args, **kwargs)
+Docstring:
+zip(iter1 [,iter2 [...]]) --> zip object
+
+Return a zip object whose .__next__() method returns a tuple where
+the i-th element comes from the i-th iterable argument.  The .__next__()
+method continues until the shortest iterable in the argument sequence
+is exhausted and then it raises StopIteration.
+Type:           type
+Subclasses:
+
+In [150]: for a, b in zip([1, 3, 5], [2, 4, 6]):
+     ...:     print(a, b)
+     ...:
+1 2
+3 4
+5 6
+
+In [151]: for a, b, c in zip([1, 3, 5], [2, 4, 6], [10, 20, 30]):
+     ...:     print(a, b, c)
+     ...:
+     ...:
+1 2 10
+3 4 20
+5 6 30
+
+In [152]: for a, b in zip([1, 3, 5], [2, 4, 6, 10]):
+     ...:     print(a, b)
+     ...:
+1 2
+3 4
+5 6
+
+In [153]: l = []
+
+In [154]: l = []
+
+In [155]: for i in range(5):
+     ...:     l.append(i)
+     ...:
+
+In [156]: l
+Out[156]: [0, 1, 2, 3, 4]
+
+In [157]: l = [ i for i in range(5) ]
+
+In [158]: l
+Out[158]: [0, 1, 2, 3, 4]
+
+In [159]: min()
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-159-9c9b7bdfea4e> in <module>
+----> 1 min()
+
+TypeError: min expected 1 arguments, got 0
+> <ipython-input-159-9c9b7bdfea4e>(1)<module>()
+----> 1 min()
+
+ipdb> c
+
+In [160]: min?
+Docstring:
+min(iterable, *[, default=obj, key=func]) -> value
+min(arg1, arg2, *args, *[, key=func]) -> value
+
+With a single iterable argument, return its smallest item. The
+default keyword-only argument specifies an object to return if
+the provided iterable is empty.
+With two or more arguments, return the smallest argument.
+Type:      builtin_function_or_method
+
+In [161]: min(1,2,3)
+Out[161]: 1
+
+In [162]: max([4,5,6])
+Out[162]: 6
+
+In [163]: sum([1, 2, 3])
+Out[163]: 6
+
+In [164]: sorted([3, 5, 7, 2, 3])
+Out[164]: [2, 3, 3, 5, 7]
+
+In [165]: l
+Out[165]: [0, 1, 2, 3, 4]
+
+In [166]: l
+Out[166]: [0, 1, 2, 3, 4]
+
+In [167]: l = [::-1]
+  File "<ipython-input-167-551dd458165b>", line 1
+    l = [::-1]
+         ^
+SyntaxError: invalid syntax
+
+
+In [168]: l = l[::-1]
+
+In [169]: l
+Out[169]: [4, 3, 2, 1, 0]
+
+In [170]: newlist = sorted(l)
+
+In [171]: newlist
+Out[171]: [0, 1, 2, 3, 4]
+
+In [172]: 1e2
+Out[172]: 100.0
+
+In [173]: 3, 5, 1.7, -2.7, 1e2, -50
+Out[173]: (3, 5, 1.7, -2.7, 100.0, -50)
+
+In [174]: t = 3, 5, 1.7, -2.7, 1e2, -50
+
+In [175]: t
+Out[175]: (3, 5, 1.7, -2.7, 100.0, -50)
+
+In [176]: t[::2]
+Out[176]: (3, 1.7, 100.0)
+
+In [177]: t
+Out[177]: (3, 5, 1.7, -2.7, 100.0, -50)
+
+In [178]: list(t)
+Out[178]: [3, 5, 1.7, -2.7, 100.0, -50]
+
+In [179]: l = list(t)
+
+In [180]: l
+Out[180]: [3, 5, 1.7, -2.7, 100.0, -50]
+
+In [181]: l.sort()
+
+In [182]: l
+Out[182]: [-50, -2.7, 1.7, 3, 5, 100.0]
+
+In [183]: l.sort()
+
+In [184]: l
+Out[184]: [-50, -2.7, 1.7, 3, 5, 100.0]
+
+In [185]: sorted(l)
+Out[185]: [-50, -2.7, 1.7, 3, 5, 100.0]
+
+In [186]: l
+Out[186]: [-50, -2.7, 1.7, 3, 5, 100.0]
+
+In [187]: l.append('blah')
+
+In [188]: l
+Out[188]: [-50, -2.7, 1.7, 3, 5, 100.0, 'blah']
+
+In [189]: l.sort()
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-189-fb07ac7c73ab> in <module>
+----> 1 l.sort()
+
+TypeError: '<' not supported between instances of 'str' and 'float'
+> <ipython-input-189-fb07ac7c73ab>(1)<module>()
+----> 1 l.sort()
+
+ipdb> c
+
+In [190]: l
+Out[190]: [-50, -2.7, 1.7, 3, 5, 100.0, 'blah']
+
+In [191]: l.remove?
+Docstring:
+L.remove(value) -> None -- remove first occurrence of value.
+Raises ValueError if the value is not present.
+Type:      builtin_function_or_method
+
+In [192]: l.remove('blah')
+
+In [193]: l
+Out[193]: [-50, -2.7, 1.7, 3, 5, 100.0]
+
+In [194]: l.append('blah')
+
+In [195]: l
+Out[195]: [-50, -2.7, 1.7, 3, 5, 100.0, 'blah']
+
+In [196]: del l[6]
+
+In [197]: l
+Out[197]: [-50, -2.7, 1.7, 3, 5, 100.0]
+
+In [198]: l
+Out[198]: [-50, -2.7, 1.7, 3, 5, 100.0]
+
+In [199]: l.reverse()
+
+In [200]: l
+Out[200]: [100.0, 5, 3, 1.7, -2.7, -50]
+
+In [201]: l.reverse()
+
+In [202]: l
+Out[202]: [-50, -2.7, 1.7, 3, 5, 100.0]
+
+In [203]: l.sort?
+Docstring: L.sort(key=None, reverse=False) -> None -- stable sort *IN PLACE*
+Type:      builtin_function_or_method
+
+In [204]: l.sort(reverse=True)
+
+In [205]: l
+Out[205]: [100.0, 5, 3, 1.7, -2.7, -50]
+
+In [206]: l.sort()
+
+In [207]: l
+Out[207]: [-50, -2.7, 1.7, 3, 5, 100.0]
+
+In [208]: l[-1]
+Out[208]: 100.0
+
+In [209]: l[::-1]
+Out[209]: [100.0, 5, 3, 1.7, -2.7, -50]
+
+In [210]: t
+Out[210]: (3, 5, 1.7, -2.7, 100.0, -50)
+
+In [211]: l = []
+
+In [212]: l
+Out[212]: []
+
+In [213]: t
+Out[213]: (3, 5, 1.7, -2.7, 100.0, -50)
+
+In [214]: for val in t:
+     ...:     l.append(val*2)
+     ...:
+
+In [215]: l
+Out[215]: [6, 10, 3.4, -5.4, 200.0, -100]
+
+In [216]: l = [ val* 2 for val in t ]
+
+In [217]: l
+Out[217]: [6, 10, 3.4, -5.4, 200.0, -100]
+
+In [218]: def multseq(seq, x):
+     ...:     return [ val*x for val in seq ]
+     ...:
+
+In [219]: multseq([1,2,3], 10)
+Out[219]: [10, 20, 30]
+
+In [220]: multseq([10,20,30], 100)
+Out[220]: [1000, 2000, 3000]
+
+In [221]: d = {}
+
+In [222]: type(d)
+Out[222]: dict
+
+In [223]: len(d)
+Out[223]: 0
+
+In [224]: d['a'] = 100
+
+In [225]: d
+Out[225]: {'a': 100}
+
+In [226]: d['b'] = 200
+
+In [227]: d
+Out[227]: {'a': 100, 'b': 200}
+
+In [228]: len(d)
+Out[228]: 2
+
+In [229]: d['a']
+Out[229]: 100
+
+In [230]: d['b']
+Out[230]: 200
+
+In [231]: d['a'] = 500
+
+In [232]: d
+Out[232]: {'a': 500, 'b': 200}
+
+In [233]: names2ages = {'Alice':25, 'Bob':20, 'Carol':32}
+
+In [234]: names2ages
+Out[234]: {'Alice': 25, 'Bob': 20, 'Carol': 32}
+
+In [235]: len(names2ages)
+Out[235]: 3
+
+In [236]: names2ages['Alice']
+Out[236]: 25
+
+In [237]: names2ages['Bob']
+Out[237]: 20
+
+In [238]: ages2names = {25:'Alice', 20.4:'Bob', 32:'Carol'}
+
+In [239]: ages2names[25]
+Out[239]: 'Alice'
+
+In [240]: ages2names = {25:'Alice', 20.4:'Bob', 32:'Carol', 25:'Doug'}
+
+In [241]: ages2names
+Out[241]: {25: 'Doug', 20.4: 'Bob', 32: 'Carol'}
+
+In [242]: ages2names
+Out[242]: {25: 'Doug', 20.4: 'Bob', 32: 'Carol'}
+
+In [243]: ages2names[45]
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+<ipython-input-243-591b8d614b83> in <module>
+----> 1 ages2names[45]
+
+KeyError: 45
+> <ipython-input-243-591b8d614b83>(1)<module>()
+----> 1 ages2names[45]
+
+ipdb> c
+
+In [244]: ages2names['Doug']
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+<ipython-input-244-14027fcf62e7> in <module>
+----> 1 ages2names['Doug']
+
+KeyError: 'Doug'
+> <ipython-input-244-14027fcf62e7>(1)<module>()
+----> 1 ages2names['Doug']
+
+ipdb> c
+
+In [245]: d
+Out[245]: {'a': 500, 'b': 200}
+
+In [246]: d['a'] = 100
+
+In [247]: d
+Out[247]: {'a': 100, 'b': 200}
+
+In [248]: del d['a']
+
+In [249]: d
+Out[249]: {'b': 200}
+
+In [250]: del['dslfksjl']
+  File "<ipython-input-250-a0f527cd18a8>", line 1
+    del['dslfksjl']
+      ^
+SyntaxError: can't delete literal
+
+
+In [251]: del d['dslfksjl']
+---------------------------------------------------------------------------
+KeyError                                  Traceback (most recent call last)
+<ipython-input-251-d1761eb74440> in <module>
+----> 1 del d['dslfksjl']
+
+KeyError: 'dslfksjl'
+> <ipython-input-251-d1761eb74440>(1)<module>()
+----> 1 del d['dslfksjl']
+
+ipdb> c
+
+In [252]: names2ages
+Out[252]: {'Alice': 25, 'Bob': 20, 'Carol': 32}
+
+In [253]: list(names2ages)
+Out[253]: ['Alice', 'Bob', 'Carol']
+
+In [254]: list(names2ages.values())
+Out[254]: [25, 20, 32]
+
+In [255]: list(names2ages.items())
+Out[255]: [('Alice', 25), ('Bob', 20), ('Carol', 32)]
+
+In [256]: lt = list(names2ages.items())
+
+In [257]: lt
+Out[257]: [('Alice', 25), ('Bob', 20), ('Carol', 32)]
+
+In [258]: lt[0]
+Out[258]: ('Alice', 25)
+
+In [259]: lt[0]
+Out[259]: ('Alice', 25)
+
+In [260]: lt[0][0]
+Out[260]: 'Alice'
+
+In [261]: lt[0][0] = 'sdfsdfs'
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+<ipython-input-261-b7425e4f8795> in <module>
+----> 1 lt[0][0] = 'sdfsdfs'
+
+TypeError: 'tuple' object does not support item assignment
+> <ipython-input-261-b7425e4f8795>(1)<module>()
+----> 1 lt[0][0] = 'sdfsdfs'
+
+ipdb> c
+
+In [262]: lt
+Out[262]: [('Alice', 25), ('Bob', 20), ('Carol', 32)]
+
+In [263]: del lt[0]
+
+In [264]: lt
+Out[264]: [('Bob', 20), ('Carol', 32)]
+
+In [265]: lt[0]
+Out[265]: ('Bob', 20)
+
+In [266]: lt[0] = 3.14159
+
+In [267]: lt
+Out[267]: [3.14159, ('Carol', 32)]
+
+In [268]: names2ages
+Out[268]: {'Alice': 25, 'Bob': 20, 'Carol': 32}
+
+In [269]: names2ages.pop?
+Docstring:
+D.pop(k[,d]) -> v, remove specified key and return the corresponding value.
+If key is not found, d is returned if given, otherwise KeyError is raised
+Type:      builtin_function_or_method
+
+In [270]: names2ages.pop('Alice')
+Out[270]: 25
+
+In [271]: names2ages
+Out[271]: {'Bob': 20, 'Carol': 32}
+
+In [272]: d = {'a':1, 'b':2, 'c':3}
+
+In [273]: d
+Out[273]: {'a': 1, 'b': 2, 'c': 3}
+
+In [274]: for key in d:
+     ...:     print(key)
+     ...:
+a
+b
+c
+
+In [275]: for val in d.values():
+     ...:     print(val)
+     ...:
+     ...:
+1
+2
+3
+
+In [276]: for key, val in d.items():
+     ...:     print(key, val)
+     ...:
+     ...:
+     ...:
+a 1
+b 2
+c 3
+
+In [277]: dd = { key:2*val for (key, val) in d.items() }
+
+In [278]: dd
+Out[278]: {'a': 2, 'b': 4, 'c': 6}
+
+In [279]: d
+Out[279]: {'a': 1, 'b': 2, 'c': 3}
+
+In [280]: [(1, 2), (3, 4, 5), (7, 8, 9, 10)]
+Out[280]: [(1, 2), (3, 4, 5), (7, 8, 9, 10)]
+
+In [281]: len([(1, 2), (3, 4, 5), (7, 8, 9, 10)])
+Out[281]: 3
+
+In [282]: lt = [(1, 2), (3, 4, 5), (7, 8, 9, 10)]
+
+In [283]: lt
+Out[283]: [(1, 2), (3, 4, 5), (7, 8, 9, 10)]
+
+In [284]: lt[1][1]
+Out[284]: 4
+
+In [285]: lt[1]
+Out[285]: (3, 4, 5)
+
+In [286]: lt[1][1]
+Out[286]: 4
+
+In [287]: {'a':[1, 2, 3], 'b':[4, 5, 6]}
+Out[287]: {'a': [1, 2, 3], 'b': [4, 5, 6]}
+
+In [288]: d = {'a':[1, 2, 3], 'b':[4, 5, 6]}
+
+In [289]: d['a']
+Out[289]: [1, 2, 3]
+
+In [290]: d['a'][0]
+Out[290]: 1
+
+In [291]: d['b'][-1]
+Out[291]: 6
+
+In [292]: l = [{'a':1, 'b':2}, {'c':3, 'd':4}]
+
+In [293]: l
+Out[293]: [{'a': 1, 'b': 2}, {'c': 3, 'd': 4}]
+
+In [294]: len(l)
+Out[294]: 2
+
+In [295]: l[1]
+Out[295]: {'c': 3, 'd': 4}
+
+In [296]: l[1]
+Out[296]: {'c': 3, 'd': 4}
+
+In [297]: l[1]['e'] = 5
+
+In [298]: l
+Out[298]: [{'a': 1, 'b': 2}, {'c': 3, 'd': 4, 'e': 5}]
+
+In [299]: l[0]
+Out[299]: {'a': 1, 'b': 2}
+
+In [300]: l[0]['a']
+Out[300]: 1
+
+In [301]: del l[0]['a']
+
+In [302]: l
+Out[302]: [{'b': 2}, {'c': 3, 'd': 4, 'e': 5}]
+
+In [303]:
+
+In [303]:
+
+In [303]:
+
+In [303]:
+
+In [303]:
+
+In [303]: a = [1, 2, 3]
+
+In [304]: a
+Out[304]: [1, 2, 3]
+
+In [305]: b = a
+
+In [306]: a
+Out[306]: [1, 2, 3]
+
+In [307]: b
+Out[307]: [1, 2, 3]
+
+In [308]: a[0] = 666
+
+In [309]: a
+Out[309]: [666, 2, 3]
+
+In [310]: b
+Out[310]: [666, 2, 3]
+
+In [311]: a = [1, 2, 3]
+
+In [312]: b = a.copy()
+
+In [313]: a[0] = 666
+
+In [314]: a
+Out[314]: [666, 2, 3]
+
+In [315]: b
+Out[315]: [1, 2, 3]
+
+In [316]: a = b
+
+In [317]: b = a
+
+In [318]: b = a.copy()
+
+In [319]: a
+Out[319]: [1, 2, 3]
+
+In [320]: b
+Out[320]: [1, 2, 3]
+
+In [321]: b = a.copy()
+
+In [322]: a == [1, 2, 3]
+Out[322]: True
+
+In [323]: b == [1, 2, 3]
+Out[323]: True
+
+In [324]: a is b
+Out[324]: False
+
+In [325]: a == b
+Out[325]: True
+
+In [326]: a is not b
+Out[326]: True
+
+In [327]: a != b
+Out[327]: False
+
+In [328]: a == b
+Out[328]: True
+
+In [329]:
